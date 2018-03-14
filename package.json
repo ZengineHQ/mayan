@@ -1,7 +1,10 @@
 {
-  "name": "maya-node",
+  "name": "mayan",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "cli.js",
+  "bin": {
+    "mayan": "cli.js"
+  },
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
