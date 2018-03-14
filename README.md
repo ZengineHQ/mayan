@@ -13,7 +13,21 @@ npm install -g git+ssh://git@github.com/WizeHive/mayan
 ```
 $ mayan
 
+mayan <command>
 
+Commands:
+  mayan build [plugin]    Build plugin
+  mayan deploy [plugin]   Deploy plugin
+  mayan login             Login
+  mayan publish [plugin]  Publish plugin
+
+Options:
+  --version   Show version number                                      [boolean]
+  --frontend  Frontend plugin name                                     [boolean]
+  --backend   Backend plugin name                                      [boolean]
+  --env       Environment name
+  --help      Show help                                                [boolean]
+  
 ```
 
 ## Contributing
