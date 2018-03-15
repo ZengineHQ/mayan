@@ -6,7 +6,8 @@
     "mayan": "cli.js"
   },
   "scripts": {
-    "test": "mocha --require test/support/chai.js --exit"
+    "test": "mocha --require test/support/chai.js --exit",
+    "eslint": "eslint eslint --env node lib/ cmds/"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,6 +21,14 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
     "mocha": "^5.0.4",
     "sinon": "^4.4.6"
   }

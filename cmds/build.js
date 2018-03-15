@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
-const build = require('../lib/build');
+const build = require('../lib/build')
 
 exports.command = 'build [plugin]'
 
 exports.desc = 'Build plugin'
 
-exports.builder = function(yargs) {
+exports.builder = (yargs) => {
   yargs.positional('plugin', {
     describe: 'Plugin name',
     type: 'string',
@@ -14,4 +14,4 @@ exports.builder = function(yargs) {
   })
 }
 
-exports.handler = build;
+exports.handler = build
