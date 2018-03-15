@@ -7,9 +7,8 @@
     "rules": {
       "space-before-function-paren": ["error", "never"],
       "padding-line-between-statements": ["error", {
-        "blankLine": "always", "prev": ["const", "let", "var"], "next": "*",
         "blankLine": "always", "prev": "*", "next": "return"
-      }]
-
+      }],
+      "prefer-arrow-callback": "error"
     }
 }
