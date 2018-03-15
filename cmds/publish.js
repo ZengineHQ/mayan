@@ -1,3 +1,5 @@
+'use strict';
+
 const publish = require('../lib/publish');
 
 exports.command = 'publish [plugin]'

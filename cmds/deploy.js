@@ -1,3 +1,5 @@
+'use strict';
+
 const deploy = require('../lib/deploy');
 
 exports.command = 'deploy [plugin]'

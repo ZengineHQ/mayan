@@ -1,3 +1,5 @@
+'use strict';
+
 const build = require('../lib/build');
 
 exports.command = 'build [plugin]'
