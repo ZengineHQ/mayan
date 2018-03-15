@@ -2,6 +2,8 @@
 
 A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 
+[![Build Status](https://drone.appsrv.com/api/badges/Wizehive/mayan/status.svg)](https://drone.appsrv.com/Wizehive/mayan)
+
 ## Install
 
 ```
