@@ -1,0 +1,47 @@
+pipeline:
+
+  test:
+    image: node:${NODE_VERSION}
+    commands:
+      - npm install --silent
+      - npm test
+    environment:
+      - NODE_ENV=test
+
+  # build:
+  #   image: plugins/docker
+  #   secrets: [docker_username, docker_password]
+  #   custom_dns: 192.168.1.1
+  #   registry: registry.appsrv.com
+  #   repo: registry.appsrv.com/tests/mayan
+  #   tags:
+  #     - ${DRONE_COMMIT_BRANCH}
+  #     - latest
+
+matrix:
+  NODE_VERSION:
+    #- 4
+    - 4-alpine
+    #- 4-wheezy
+    #- 4-stretch
+    #- 4-slim
+    # - 6
+    - 6-alpine
+    #- 6-wheezy
+    #- 6-stretch
+    #- 6-slim
+    # - 8
+    - 8-alpine
+    #- 8-wheezy
+    #- 8-stretch
+    #- 8-slim
+    # - 9
+    - 9-alpine
+    #- 9-wheezy
+    #- 9-stretch
+    #- 9-slim
+    - alpine
+    # - wheezy
+    # - stretch
+    # - slim
+    - latest
