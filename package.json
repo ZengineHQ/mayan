@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "mocha --require test/support/chai.js --exit",
-    "eslint": "eslint eslint --env node lib/ cmds/"
+    "eslint": "eslint eslint lib/ cmds/ test/"
   },
   "license": "MIT",
   "dependencies": {
