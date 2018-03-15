@@ -1,3 +1,7 @@
+'use strict';
+
+const publish = require('../lib/publish');
+
 exports.command = 'publish [plugin]'
 
 exports.desc = 'Publish plugin'
@@ -10,6 +14,4 @@ exports.builder = function(yargs) {
   })
 }
 
-exports.handler = function(argv) {
-  console.log('the command....')
-}
+exports.handler = publish;

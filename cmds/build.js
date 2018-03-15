@@ -1,3 +1,7 @@
+'use strict';
+
+const build = require('../lib/build');
+
 exports.command = 'build [plugin]'
 
 exports.desc = 'Build plugin'
@@ -10,7 +14,4 @@ exports.builder = function(yargs) {
   })
 }
 
-exports.handler = function(argv) {
-  console.log(argv)
-  console.log('the command....')
-}
+exports.handler = build;

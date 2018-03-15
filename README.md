@@ -2,6 +2,8 @@
 
 A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 
+[![Build Status](https://drone.appsrv.com/api/badges/Wizehive/mayan/status.svg)](https://drone.appsrv.com/Wizehive/mayan)
+
 ## Install
 
 ```
@@ -33,17 +35,21 @@ Options:
 ## Contributing
 
 
+### Fork
+
+```bash
+git clone git@github.com:Wizehive/mayan.git
+```
+
 ### Install dependencies
 
 ```bash
-# install node modules
 npm install
 ```
 
 ### Test and lint
 
 ```bash
-# changes to compatible node on the terminal session
 npm test
 npm run lint
 ```
@@ -53,3 +59,7 @@ npm run lint
 ```bash
 npm link
 ```
+
+### Adding new commands
+
+Follow this [approach/strategy](https://github.com/yargs/yargs/blob/master/docs/advanced.md#example-command-hierarchy-using-commanddir) to organize commands
