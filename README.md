@@ -20,16 +20,17 @@ mayan <command>
 Commands:
   mayan build [plugin]    Build plugin
   mayan deploy [plugin]   Deploy plugin
-  mayan login             Login
   mayan publish [plugin]  Publish plugin
 
 Options:
-  --version   Show version number                                      [boolean]
-  --frontend  Frontend plugin name                                     [boolean]
-  --backend   Backend plugin name                                      [boolean]
-  --env       Environment name
-  --help      Show help                                                [boolean]
-  
+  --version      Show version number                                   [boolean]
+  --frontend     Frontend plugin name                                  [boolean]
+  --backend      Backend plugin name                                   [boolean]
+  --concurrency  Concurrency limit                         [number] [default: 2]
+  --env          Environment name
+  --config       Path to JSON config file
+  --help         Show help                                             [boolean]
+    
 ```
 
 ## Contributing
@@ -37,26 +38,26 @@ Options:
 
 ### Fork
 
-```bash
+```
 git clone git@github.com:Wizehive/mayan.git
 ```
 
 ### Install dependencies
 
-```bash
+```
 npm install
 ```
 
 ### Test and lint
 
-```bash
+```
 npm test
-npm run lint
+npm run eslint
 ```
 
 ### Install binary locally
 
-```bash
+```
 npm link
 ```
 

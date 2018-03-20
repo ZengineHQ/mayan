@@ -1,5 +1,13 @@
 pipeline:
 
+  eslint:
+    image: node:${NODE_VERSION}
+    commands:
+      - npm install --silent
+      - npm run eslint
+    environment:
+      - NODE_ENV=test
+
   test:
     image: node:${NODE_VERSION}
     commands:
