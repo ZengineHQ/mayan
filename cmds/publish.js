@@ -31,6 +31,14 @@ exports.builder = (yargs) => {
   })
   yargs.option('visible', {
     describe: 'Whether plugin is listed in the marketplace',
+    type: 'boolean'
+  })
+  yargs.option('firebase-url', {
+    describe: 'Firebase URL without path ex: http://example.firebaseio.com',
+    type: 'string'
+  })
+  yargs.option('firebase-secret', {
+    describe: 'Firebase Secret',
     type: 'string'
   })
 }
