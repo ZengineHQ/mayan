@@ -7,8 +7,6 @@ function parseConfig(configPath) {
 
 require('yargs')
   .commandDir('cmds')
-  .option('frontend', { description: 'Frontend plugin name', boolean: true })
-  .option('backend', { description: 'Backend plugin name', boolean: true })
   .option('concurrency', { description: 'Concurrency limit', type: 'number', default: 2 })
   .option('env', { description: 'Environment name', requiresArg: true })
   .env('MAYAN')
