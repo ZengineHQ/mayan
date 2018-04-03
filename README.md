@@ -24,13 +24,11 @@ Commands:
 
 Options:
   --version      Show version number                                   [boolean]
-  --frontend     Frontend plugin name                                  [boolean]
-  --backend      Backend plugin name                                   [boolean]
   --concurrency  Concurrency limit                         [number] [default: 2]
   --env          Environment name
   --config       Path to JSON config file
   --help         Show help                                             [boolean]
-    
+
 ```
 
 ## Contributing
