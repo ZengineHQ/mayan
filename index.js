@@ -35,7 +35,7 @@ const argv = require('yargs')
     }, argv => {
         console.log("we're deploying", argv);
     })
-    .command('publish [plugin]', 'public the API', yargs => {
+    .command('publish [plugin]', 'publish the API', yargs => {
         return yargs
             .option('frontend', { default: true, description: 'Deploy the frontend', boolean: true })
             .option('backend', { default: true, description: 'Deploy the backend', boolean: true })
