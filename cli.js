@@ -2,7 +2,7 @@
 const fs = require('fs')
 
 function parseConfig(configPath) {
-  return JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+  return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
 }
 
 require('yargs')
