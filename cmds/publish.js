@@ -6,7 +6,7 @@ exports.command = 'publish [plugin]'
 
 exports.desc = 'Publish plugin'
 
-exports.builder = (yargs) => {
+exports.builder = yargs => {
   yargs.positional('plugin', {
     describe: 'Plugin name',
     type: 'string',
@@ -34,7 +34,7 @@ exports.builder = (yargs) => {
     type: 'boolean'
   })
   yargs.option('firebase-url', {
-    describe: 'Firebase URL without path ex: http://example.firebaseio.com',
+    describe: 'Firebase URL without path ex: http://example.firebaseio.com/',
     type: 'string'
   })
   yargs.option('firebase-secret', {

@@ -6,7 +6,7 @@ exports.command = 'deploy [plugin]'
 
 exports.desc = 'Deploy plugin'
 
-exports.builder = (yargs) => {
+exports.builder = yargs => {
   yargs.positional('plugin', {
     describe: 'Plugin name',
     type: 'string',
