@@ -12,6 +12,16 @@ exports.builder = yargs => {
     type: 'string',
     default: '*'
   })
+  yargs.option('frontend', {
+    describe: 'Only deploy frontend plugins',
+    type: 'boolean',
+    default: false
+  })
+  yargs.option('backend', {
+    describe: 'Only deploy backend services',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = deploy
