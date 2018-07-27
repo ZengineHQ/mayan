@@ -41,6 +41,16 @@ exports.builder = yargs => {
     describe: 'Firebase Secret',
     type: 'string'
   })
+  yargs.option('frontend', {
+    describe: 'Only deploy frontend plugins',
+    type: 'boolean',
+    default: false
+  })
+  yargs.option('backend', {
+    describe: 'Only deploy backend services',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = publish
