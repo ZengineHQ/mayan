@@ -1,5 +1,3 @@
-const feCanonical = require('./lib/frontend/canonical');
-
 const argv = require('yargs')
     .usage('$0 <cmd> [args]')
     .command('init <plugin>', 'create a new plugin', yargs => {
@@ -19,9 +17,9 @@ const argv = require('yargs')
     }, async argv => {
         console.log("we're building", argv);
         if (argv.frontend) {
-            feCanonical.build(process.cwd(), argv.plugin);
+            // build only frontend?
         }
-        
+
     })
     .command('deploy [plugin]', 'deploy the API', yargs => {
         return yargs
