@@ -13,12 +13,12 @@ exports.builder = yargs => {
     default: '*'
   })
   yargs.option('frontend', {
-    describe: 'Whether to only build frontend plugins',
+    describe: 'Only build frontend plugins',
     type: 'boolean',
     default: false
   })
   yargs.option('backend', {
-    describe: 'Whether to only build backend services',
+    describe: 'Only build backend services',
     type: 'boolean',
     default: false
   })
