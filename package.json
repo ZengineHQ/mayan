@@ -15,6 +15,7 @@
     "babel-plugin-transform-strict-mode": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "bluebird": "^3.5.1",
+    "execa": "^0.10.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
