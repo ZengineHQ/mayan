@@ -13,6 +13,7 @@ require('yargs')
   .env('MAYAN')
   .config('config', parseConfig)
   .demandCommand(1, '')
+  .strict()
   .help()
   // Keep things simple unless advanced users use --show-hidden
   .hide('concurrency')
