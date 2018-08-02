@@ -7,7 +7,6 @@ function parseConfig(configPath) {
 
 require('yargs')
   .commandDir('cmds')
-  .option('concurrency', { description: 'Concurrency limit', type: 'number', default: 2 })
   .option('env', { description: 'Environment name', requiresArg: true })
   .option('verbose', { description: 'Display verbose debug output', type: 'boolean' })
   .env('MAYAN')
@@ -16,7 +15,6 @@ require('yargs')
   .strict()
   .help()
   // Keep things simple unless advanced users use --show-hidden
-  .hide('concurrency')
   .hide('config')
   .hide('version')
   .showHidden('show-hidden', 'Show advanced options')
