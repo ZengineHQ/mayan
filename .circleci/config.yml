@@ -1,9 +1,26 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
+
+  build:
+    docker:
+      - image: circleci/node
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
 
   build-node-6:
     docker:
@@ -21,10 +38,10 @@ jobs:
           key: node6-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
       - run: npm run test
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
 
   build-node-7:
     docker:
@@ -42,11 +59,10 @@ jobs:
           key: node7-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
       - run: npm run test
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
-
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
 
   build-node-8:
     docker:
@@ -64,10 +80,10 @@ jobs:
           key: node8-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
       - run: npm run test
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
 
   build-node-10:
     docker:
@@ -85,7 +101,17 @@ jobs:
           key: node10-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
       - run: npm run test
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
+      - build-node-6
+      - build-node-7
+      - build-node-8
+      - build-node-10
