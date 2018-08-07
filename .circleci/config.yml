@@ -1,7 +1,7 @@
 version: 2
 jobs:
 
-  build:
+  test-node-latest:
     docker:
       - image: circleci/node
     working_directory: ~/repo
@@ -9,20 +9,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - node-dependencies-{{ checksum "package.json" }}
+          - node-latest-dependencies-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: node-dependencies-{{ checksum "package.json" }}
+          key: node-latest-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
+      - run: npm run eslint
       - run: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
       #     path: ~/junit
 
-  build-node-6:
+  test-node-6:
     docker:
       - image: circleci/node:6
     working_directory: ~/repo
@@ -30,20 +31,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - node6-dependencies-{{ checksum "package.json" }}
+          - node-6-dependencies-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: node6-dependencies-{{ checksum "package.json" }}
+          key: node-6-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
+      - run: npm run eslint
       - run: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
       #     path: ~/junit
 
-  build-node-7:
+  test-node-7:
     docker:
       - image: circleci/node:7
     working_directory: ~/repo
@@ -51,20 +53,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - node7-dependencies-{{ checksum "package.json" }}
+          - node-7-dependencies-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: node7-dependencies-{{ checksum "package.json" }}
+          key: node-7-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
+      - run: npm run eslint
       - run: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
       #     path: ~/junit
 
-  build-node-8:
+  test-node-8:
     docker:
       - image: circleci/node:8
     working_directory: ~/repo
@@ -72,20 +75,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - node8-dependencies-{{ checksum "package.json" }}
+          - node-8-dependencies-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: node8-dependencies-{{ checksum "package.json" }}
+          key: node-8-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
+      - run: npm run eslint
       - run: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
       #     path: ~/junit
 
-  build-node-10:
+  test-node-10:
     docker:
       - image: circleci/node:10
     working_directory: ~/repo
@@ -93,13 +97,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - node10-dependencies-{{ checksum "package.json" }}
+          - node-10-dependencies-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
-          key: node10-dependencies-{{ checksum "package.json" }}
+          key: node-10-dependencies-{{ checksum "package.json" }}
       - run: mkdir ~/junit
+      - run: npm run eslint
       - run: npm run test
       # - store_test_results:
       #     path: ~/junit
@@ -110,8 +115,8 @@ workflows:
   version: 2
   test:
     jobs:
-      - build
-      - build-node-6
-      - build-node-7
-      - build-node-8
-      - build-node-10
+      - test-node-latest
+      - test-node-6
+      - test-node-7
+      - test-node-8
+      - test-node-10
