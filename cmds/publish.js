@@ -51,6 +51,16 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('skip-build', {
+    describe: 'Skip building plugins',
+    type: 'boolean',
+    default: false
+  })
+  yargs.option('skip-deploy', {
+    describe: 'Skip deploying plugins and attempt to publish directly',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = publish

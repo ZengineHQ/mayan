@@ -22,6 +22,11 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('skip-build', {
+    describe: 'Skip building and attempt to deploy plugins directly',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = deploy
