@@ -1,0 +1,122 @@
+version: 2
+jobs:
+
+  test-node-latest:
+    docker:
+      - image: circleci/node
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-latest-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-latest-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run eslint
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+  test-node-6:
+    docker:
+      - image: circleci/node:6
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-6-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-6-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run eslint
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+  test-node-7:
+    docker:
+      - image: circleci/node:7
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-7-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-7-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run eslint
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+  test-node-8:
+    docker:
+      - image: circleci/node:8
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-8-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-8-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run eslint
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+  test-node-10:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-10-dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-10-dependencies-{{ checksum "package.json" }}
+      - run: mkdir ~/junit
+      - run: npm run eslint
+      - run: npm run test
+      # - store_test_results:
+      #     path: ~/junit
+      # - store_artifacts:
+      #     path: ~/junit
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-node-latest
+      - test-node-6
+      - test-node-7
+      - test-node-8
+      - test-node-10
