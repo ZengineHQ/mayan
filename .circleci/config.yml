@@ -44,9 +44,6 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
-      - run:
-          name: Audit NPM modules
-          command: npm audit
       - save_cache:
           paths:
             - node_modules
