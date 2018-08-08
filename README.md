@@ -2,7 +2,7 @@
 
 A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 
-[![Build Status](https://drone.appsrv.com/api/badges/Wizehive/mayan/status.svg)](https://drone.appsrv.com/Wizehive/mayan)
+[![CircleCI](https://circleci.com/gh/Wizehive/mayan.svg?style=svg&circle-token=7f05ffa02401a7473254df1cf61c47a7fdda0eaa)](https://circleci.com/gh/Wizehive/mayan)
 
 ## Install
 
@@ -25,10 +25,12 @@ Commands:
   mayan init [plugin]  Initialize plugin locally
 
 Options:
-  --version      Show version number                                   [boolean]
   --env          Environment name
-  --config       Path to JSON config file
+  --verbose      Display verbose debug output                          [boolean]
   --help         Show help                                             [boolean]
+  --show-hidden  Show advanced options                                 [boolean]
+
+For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 ```
 
