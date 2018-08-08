@@ -18,16 +18,19 @@ $ mayan
 mayan <command>
 
 Commands:
-  mayan build [plugin]    Build plugin
-  mayan deploy [plugin]   Deploy plugin
-  mayan publish [plugin]  Publish plugin
+  mayan build [plugin]     Build plugin
+  mayan deploy [plugin]    Deploy plugin
+  mayan init [plugin]      Initialize plugin
+  mayan publish [plugin]   Publish plugin
+  mayan register [plugin]  Register plugin in Zengine API
 
 Options:
-  --version      Show version number                                   [boolean]
-  --concurrency  Concurrency limit                         [number] [default: 2]
   --env          Environment name
-  --config       Path to JSON config file
+  --verbose      Display verbose debug output                          [boolean]
   --help         Show help                                             [boolean]
+  --show-hidden  Show advanced options                                 [boolean]
+
+For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 ```
 
