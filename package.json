@@ -25,7 +25,6 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1",
-    "inquirer": "^5.1.0",
     "kleur": "^2.0.1",
     "listr": "^0.14.1",
     "lodash": "^4.17.5",
