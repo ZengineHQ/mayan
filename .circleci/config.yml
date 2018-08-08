@@ -15,7 +15,7 @@ jobs:
           command: npm install
       - run:
           name: Audit NPM modules
-          command: npm audit 2>&1
+          command: npm audit || true
       - save_cache:
           paths:
             - node_modules
