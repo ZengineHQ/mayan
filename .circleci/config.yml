@@ -12,10 +12,10 @@ jobs:
           - node-latest-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install
+          command: npm install --production
       - run:
           name: Log NPM audit
-          command: npm audit
+          command: npm audit --dry-run --production
       - save_cache:
           paths:
             - node_modules
@@ -43,7 +43,7 @@ jobs:
           - node-6-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install
+          command: npm install --production
       - run:
           name: Log NPM audit
           command: npm audit
@@ -74,10 +74,7 @@ jobs:
           - node-7-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install
-      - run:
-          name: Log NPM audit
-          command: npm audit
+          command: npm install --production
       - save_cache:
           paths:
             - node_modules
@@ -105,10 +102,7 @@ jobs:
           - node-8-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install
-      - run:
-          name: Log NPM audit
-          command: npm audit
+          command: npm install --production
       - save_cache:
           paths:
             - node_modules
@@ -136,10 +130,10 @@ jobs:
           - node-10-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install
+          command: npm install --production
       - run:
           name: Log NPM audit
-          command: npm audit
+          command: npm audit --dry-run --production
       - save_cache:
           paths:
             - node_modules
