@@ -1,5 +1,5 @@
 {
-  "name": "mayan",
+  "name": "@zenginehq/mayan",
   "version": "1.1.0",
   "main": "cli.js",
   "bin": {
