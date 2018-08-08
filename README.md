@@ -7,7 +7,7 @@ A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 ## Install
 
 ```
-npm install -g git+ssh://git@github.com/WizeHive/mayan
+npm install -g @zenginehq/mayan
 ```
 
 ## Using
