@@ -12,7 +12,7 @@ jobs:
           - node-latest-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install --production
+          command: npm install
       - run:
           name: Audit NPM modules
           command: npm audit --production
@@ -43,7 +43,7 @@ jobs:
           - node-6-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install --production
+          command: npm install
       - run:
           name: Audit NPM modules
           command: npm audit
@@ -74,7 +74,7 @@ jobs:
           - node-7-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install --production
+          command: npm install
       - save_cache:
           paths:
             - node_modules
@@ -102,7 +102,7 @@ jobs:
           - node-8-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install --production
+          command: npm install
       - save_cache:
           paths:
             - node_modules
@@ -130,7 +130,7 @@ jobs:
           - node-10-dependencies-{{ checksum "package.json" }}
       - run:
           name: Instal NPM modules
-          command: npm install --production
+          command: npm install
       - run:
           name: Audit NPM modules
           command: npm audit --production
