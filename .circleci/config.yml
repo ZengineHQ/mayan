@@ -32,62 +32,6 @@ jobs:
       # - store_artifacts:
       #     path: ~/junit
 
-  test-node-6:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - node-6-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Instal NPM modules
-          command: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: node-6-dependencies-{{ checksum "package.json" }}
-      # - run: mkdir ~/junit
-      - run:
-          name: Check code styling (lint)
-          command: npm run eslint
-      - run:
-          name: Run tests
-          command: npm run test
-      # - store_test_results:
-      #     path: ~/junit
-      # - store_artifacts:
-      #     path: ~/junit
-
-  test-node-7:
-    docker:
-      - image: circleci/node:7
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - node-7-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Instal NPM modules
-          command: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: node-7-dependencies-{{ checksum "package.json" }}
-      # - run: mkdir ~/junit
-      - run:
-          name: Check code styling (lint)
-          command: npm run eslint
-      - run:
-          name: Run tests
-          command: npm run test
-      # - store_test_results:
-      #     path: ~/junit
-      # - store_artifacts:
-      #     path: ~/junit
-
   test-node-8:
     docker:
       - image: circleci/node:8
@@ -152,7 +96,5 @@ workflows:
   test:
     jobs:
       - test-node-latest
-      - test-node-6
-      - test-node-7
       - test-node-8
       - test-node-10
