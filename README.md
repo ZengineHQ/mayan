@@ -21,6 +21,8 @@ Commands:
   mayan build [plugin]    Build plugin
   mayan deploy [plugin]   Deploy plugin
   mayan publish [plugin]  Publish plugin
+  mayan register [plugin]  Register plugin in API
+  mayan init [plugin]  Initialize plugin locally
 
 Options:
   --version      Show version number                                   [boolean]
@@ -43,6 +45,9 @@ mayan strives to be 100% backwards compatible with original maya but also adds s
 - Minifies CSS, JS and HTML when `prod` or `production` environment used
 - Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins (the old `maya-build` in backend services still functions as post build)
 - The maya build artifact location and folder structure has changed
+- *coming soon* `register` command to create/update plugins using the Zengine API and maintain your maya.json ids updated
+- *coming soon* `init` command to initialize a local dev environment either from a fresh git clone (registers plugin if necessary) or from scratch (programatically invokes yeoman generator and then registers and publishes plugin)
+
 
 ## Contributing
 
