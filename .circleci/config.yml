@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
+      - run:
+          name: Log NPM audit
+          command: npm audit
       - save_cache:
           paths:
             - node_modules
@@ -41,6 +44,9 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
+      - run:
+          name: Log NPM audit
+          command: npm audit
       - save_cache:
           paths:
             - node_modules
@@ -69,6 +75,9 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
+      - run:
+          name: Log NPM audit
+          command: npm audit
       - save_cache:
           paths:
             - node_modules
@@ -97,6 +106,9 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
+      - run:
+          name: Log NPM audit
+          command: npm audit
       - save_cache:
           paths:
             - node_modules
@@ -125,6 +137,9 @@ jobs:
       - run:
           name: Instal NPM modules
           command: npm install
+      - run:
+          name: Log NPM audit
+          command: npm audit
       - save_cache:
           paths:
             - node_modules
