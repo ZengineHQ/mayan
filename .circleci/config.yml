@@ -14,8 +14,8 @@ jobs:
           name: Instal NPM modules
           command: npm install --production
       - run:
-          name: Log NPM audit
-          command: npm audit --dry-run --production
+          name: Audit NPM modules
+          command: npm audit --production
       - save_cache:
           paths:
             - node_modules
@@ -45,7 +45,7 @@ jobs:
           name: Instal NPM modules
           command: npm install --production
       - run:
-          name: Log NPM audit
+          name: Audit NPM modules
           command: npm audit
       - save_cache:
           paths:
@@ -132,8 +132,8 @@ jobs:
           name: Instal NPM modules
           command: npm install --production
       - run:
-          name: Log NPM audit
-          command: npm audit --dry-run --production
+          name: Audit NPM modules
+          command: npm audit --production
       - save_cache:
           paths:
             - node_modules
