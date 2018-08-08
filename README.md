@@ -2,7 +2,7 @@
 
 A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 
-[![Build Status](https://drone.appsrv.com/api/badges/Wizehive/mayan/status.svg)](https://drone.appsrv.com/Wizehive/mayan)
+[![CircleCI](https://circleci.com/gh/Wizehive/mayan.svg?style=svg&circle-token=7f05ffa02401a7473254df1cf61c47a7fdda0eaa)](https://circleci.com/gh/Wizehive/mayan)
 
 ## Install
 
@@ -18,16 +18,19 @@ $ mayan
 mayan <command>
 
 Commands:
-  mayan build [plugin]    Build plugin
-  mayan deploy [plugin]   Deploy plugin
-  mayan publish [plugin]  Publish plugin
+  mayan build [plugin]     Build plugin
+  mayan deploy [plugin]    Deploy plugin
+  mayan init [plugin]      Initialize plugin
+  mayan publish [plugin]   Publish plugin
+  mayan register [plugin]  Register plugin in Zengine API
 
 Options:
-  --version      Show version number                                   [boolean]
-  --concurrency  Concurrency limit                         [number] [default: 2]
   --env          Environment name
-  --config       Path to JSON config file
+  --verbose      Display verbose debug output                          [boolean]
   --help         Show help                                             [boolean]
+  --show-hidden  Show advanced options                                 [boolean]
+
+For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 ```
 
