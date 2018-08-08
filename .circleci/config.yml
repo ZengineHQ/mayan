@@ -10,14 +10,23 @@ jobs:
       - restore_cache:
           keys:
           - node-latest-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Instal NPM modules
+          command: npm install
+      - run:
+          name: Audit NPM modules
+          command: npm audit || true
       - save_cache:
           paths:
             - node_modules
           key: node-latest-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling (lint)
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -32,14 +41,20 @@ jobs:
       - restore_cache:
           keys:
           - node-6-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Instal NPM modules
+          command: npm install
       - save_cache:
           paths:
             - node_modules
           key: node-6-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling (lint)
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -54,14 +69,20 @@ jobs:
       - restore_cache:
           keys:
           - node-7-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Instal NPM modules
+          command: npm install
       - save_cache:
           paths:
             - node_modules
           key: node-7-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling (lint)
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -76,14 +97,20 @@ jobs:
       - restore_cache:
           keys:
           - node-8-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Instal NPM modules
+          command: npm install
       - save_cache:
           paths:
             - node_modules
           key: node-8-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling (lint)
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -98,14 +125,23 @@ jobs:
       - restore_cache:
           keys:
           - node-10-dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Instal NPM modules
+          command: npm install
+      - run:
+          name: Audit NPM modules
+          command: npm audit || true
       - save_cache:
           paths:
             - node_modules
           key: node-10-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling (lint)
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
