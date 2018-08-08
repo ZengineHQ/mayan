@@ -24,12 +24,25 @@ Commands:
 
 Options:
   --version      Show version number                                   [boolean]
-  --concurrency  Concurrency limit                         [number] [default: 2]
   --env          Environment name
   --config       Path to JSON config file
   --help         Show help                                             [boolean]
 
 ```
+
+## Differences from maya
+
+mayan strives to be 100% backwards compatible with original maya but also adds some additional new features:
+
+- Write frontend plugins using ES6 features such as arrow functions, let/const, destructuring, rest/spread, etc
+- Write frontend plugin styles using SCSS
+- You can also keep on using vanilla js and css if that's your thing
+- Support for frontend plugin modules directly in the main plugin package.json as regular dependencies (the old `src` dir approach also works)
+- Follows symlinks for @zenginehq modules for a great local development experience
+- Ability to `--skip-build` when deploying and publishing and `--skip-deploy` when publishing
+- Minifies CSS, JS and HTML when `prod` or `production` environment used
+- Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins (the old `maya-build` in backend services still functions as post build)
+- The maya build artifact location and folder structure has changed
 
 ## Contributing
 
