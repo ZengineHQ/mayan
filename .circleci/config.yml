@@ -15,9 +15,13 @@ jobs:
           paths:
             - node_modules
           key: node-latest-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -37,9 +41,13 @@ jobs:
           paths:
             - node_modules
           key: node-6-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -59,9 +67,13 @@ jobs:
           paths:
             - node_modules
           key: node-7-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -81,9 +93,13 @@ jobs:
           paths:
             - node_modules
           key: node-8-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
@@ -103,9 +119,13 @@ jobs:
           paths:
             - node_modules
           key: node-10-dependencies-{{ checksum "package.json" }}
-      - run: mkdir ~/junit
-      - run: npm run eslint
-      - run: npm run test
+      # - run: mkdir ~/junit
+      - run:
+          name: Check code styling
+          command: npm run eslint
+      - run:
+          name: Run tests
+          command: npm run test
       # - store_test_results:
       #     path: ~/junit
       # - store_artifacts:
