@@ -15,7 +15,7 @@ jobs:
           command: npm install
       - run:
           name: Audit NPM modules
-          command: AUDIT_LOG=`npm audit 2>&1` || echo $AUDIT_LOG
+          command: npm audit 2>&1
       - save_cache:
           paths:
             - node_modules
@@ -133,7 +133,7 @@ jobs:
           command: npm install
       - run:
           name: Audit NPM modules
-          command: AUDIT_LOG=`npm audit 2>&1` || echo $AUDIT_LOG
+          command: npm audit 2>&1
       - save_cache:
           paths:
             - node_modules
