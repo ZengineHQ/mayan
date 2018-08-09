@@ -57,7 +57,7 @@ mayan strives to be 100% backwards compatible with original maya but also adds s
 ### Fork
 
 ```
-git clone git@github.com:Wizehive/mayan.git
+git clone git@github.com:ZengineHQ/mayan.git
 ```
 
 ### Install dependencies
