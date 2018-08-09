@@ -8,7 +8,6 @@ function parseConfig(configPath) {
 require('yargs')
   .commandDir('cmds')
   .option('env', { description: 'Environment name', requiresArg: true })
-  .option('verbose', { description: 'Display verbose debug output', type: 'boolean' })
   .env('MAYAN')
   .config('config', parseConfig)
   .demandCommand(1, '')
