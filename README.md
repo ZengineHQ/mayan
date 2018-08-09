@@ -36,7 +36,11 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 ## Differences from maya
 
-mayan strives to be 100% backwards compatible with original maya but also adds some additional new features:
+Whereas mayan strives to be as backwards compatible with original maya as possible, there is one breaking change:
+
+- backend service `maya-build` scripts no longer work and have been replaced with 2 new pre/post build scripts
+
+*New Features*
 
 - Write frontend plugins using ES6 features such as arrow functions, let/const, destructuring, rest/spread, etc
 - Write frontend plugin styles using SCSS
@@ -45,7 +49,7 @@ mayan strives to be 100% backwards compatible with original maya but also adds s
 - Follows symlinks for @zenginehq modules for a great local development experience
 - Ability to `--skip-build` when deploying and publishing and `--skip-deploy` when publishing
 - Minifies CSS, JS and HTML when `prod` or `production` environment used
-- Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins (the old `maya-build` in backend services still functions as post build)
+- Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins
 - The maya build artifact location and folder structure has changed
 - *coming soon* `register` command to create/update plugins using the Zengine API and maintain your maya.json ids updated
 - *coming soon* `init` command to initialize a local dev environment either from a fresh git clone (registers plugin if necessary) or from scratch (programatically invokes yeoman generator and then registers and publishes plugin)
