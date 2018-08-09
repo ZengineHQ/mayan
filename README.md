@@ -2,7 +2,7 @@
 
 A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 
-[![CircleCI](https://circleci.com/gh/Wizehive/mayan.svg?style=svg&circle-token=7f05ffa02401a7473254df1cf61c47a7fdda0eaa)](https://circleci.com/gh/Wizehive/mayan)
+[![CircleCI](https://circleci.com/gh/ZengineHQ/mayan.svg?style=svg)](https://circleci.com/gh/ZengineHQ/mayan)
 
 ## Install
 
@@ -57,7 +57,7 @@ mayan strives to be 100% backwards compatible with original maya but also adds s
 ### Fork
 
 ```
-git clone git@github.com:Wizehive/mayan.git
+git clone git@github.com:ZengineHQ/mayan.git
 ```
 
 ### Install dependencies
