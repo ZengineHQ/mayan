@@ -61,6 +61,11 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('yes', {
+    describe: 'Skip the "are you sure" confirmation',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = publish
