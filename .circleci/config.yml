@@ -42,7 +42,7 @@ jobs:
           keys:
           - node-8-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Instal NPM modules
+          name: Install NPM modules
           command: npm install
       - save_cache:
           paths:
@@ -70,7 +70,7 @@ jobs:
           keys:
           - node-10-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Instal NPM modules
+          name: Install NPM modules
           command: npm install
       - run:
           name: Audit NPM modules
