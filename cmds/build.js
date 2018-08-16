@@ -22,6 +22,11 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('skip-minify', {
+    describe: 'Skip minifying files when a production environment is detected',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = build
