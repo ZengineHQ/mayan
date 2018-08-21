@@ -110,30 +110,35 @@ jobs:
             npm rebuild node-sass
             npm link
       - run:
-          name: Change to test plugin directory
+          name: Create maya.json
           command: |
             cd test/integration/test-plugin
+            cp maya.example.json maya.json
+            sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
+            cat maya.json
       - run:
           name: Test mayan help
           command: |
             mayan --help
-      # - run:
-      #     name: Test mayan show hidden options
-      #     command: |
-      #       cd test/integration/test-plugin
-      #       mayan --show-hidden
+      - run:
+          name: Test mayan show hidden options
+          command: |
+            mayan --show-hidden
       - run:
           name: Test mayan build
           command: |
+            cd test/integration/test-plugin
             mayan build --env stage
       - run:
           name: Test mayan deploy
           command: |
+            cd test/integration/test-plugin
             mayan deploy --env stage
       - run:
           name: Test mayan publish
           command: |
-            mayan publish --env stage
+            cd test/integration/test-plugin
+            mayan publish --env stage --yes
 
 
 workflows:

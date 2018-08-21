@@ -18,7 +18,7 @@
 		},
 		"stage": {
 			"api_endpoint": "stage-api.zenginehq.com",
-			"access_token": "579e7cb6661d237aa45fca6976065b479ea55117",
+			"access_token": "{{API_TOKEN}}",
 			"plugins": {
 				"test": {
 					"id": 434,
