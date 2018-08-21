@@ -115,7 +115,7 @@ jobs:
             cd test/integration/test-plugin
             echo 'export PATH="$GOPATH/bin:$PATH"' >> $BASH_ENV
             cp maya.example.json maya.json
-            sed -i 's@{{API_TOKEN}}@'"${ZENGINE_API_TOKEN}"'@' maya.json
+            sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
             cat maya.json
       - run:
           name: Test mayan help
@@ -133,14 +133,17 @@ jobs:
       - run:
           name: Test mayan deploy
           command: |
-            cd test/integration/test-plugin
-            mayan deploy --env stage
+            if [ -z "$ZENGINE_API_TOKEN" ]; then
+              cd test/integration/test-plugin
+              mayan deploy --env stage
+            fi
       - run:
           name: Test mayan publish
           command: |
-            cd test/integration/test-plugin
-            mayan publish --env stage --yes
-
+            if [ -z "$ZENGINE_API_TOKEN" ]; then
+              cd test/integration/test-plugin
+              mayan publish --env stage --yes
+            fi
 
 workflows:
   version: 2
