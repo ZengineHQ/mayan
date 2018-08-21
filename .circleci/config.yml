@@ -110,9 +110,12 @@ jobs:
             npm rebuild node-sass
             npm link
       - run:
-          name: Test mayan help
+          name: Change to test plugin directory
           command: |
             cd test/integration/test-plugin
+      - run:
+          name: Test mayan help
+          command: |
             mayan --help
       # - run:
       #     name: Test mayan show hidden options
@@ -122,17 +125,14 @@ jobs:
       - run:
           name: Test mayan build
           command: |
-            cd test/integration/test-plugin
             mayan build --env stage
       - run:
           name: Test mayan deploy
           command: |
-            cd test/integration/test-plugin
             mayan deploy --env stage
       - run:
           name: Test mayan publish
           command: |
-            cd test/integration/test-plugin
             mayan publish --env stage
 
 
