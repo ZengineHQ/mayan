@@ -1,0 +1,7 @@
+maya.json
+maya_build/
+bower_components/
+npm-debug.log
+*.sublime-project
+*.sublime-workspace
+.DS_Store

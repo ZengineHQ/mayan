@@ -91,6 +91,51 @@ jobs:
       # - store_artifacts:
       #     path: ~/junit
 
+  integration-tests:
+    docker:
+      - image: circleci/node:8
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup NPM bin
+          command: |
+            mkdir -p ~/.npm-global/bin
+            npm config set prefix '~/.npm-global'
+            echo 'export PATH=~/.npm-global/bin:$PATH' >> $BASH_ENV
+      - run:
+          name: Install NPM modules
+          command: |
+            npm install
+            npm rebuild node-sass
+            npm link
+      - run:
+          name: Test mayan help
+          command: |
+            cd test/integration/test-plugin
+            mayan --help
+      # - run:
+      #     name: Test mayan show hidden options
+      #     command: |
+      #       cd test/integration/test-plugin
+      #       mayan --show-hidden
+      - run:
+          name: Test mayan build
+          command: |
+            cd test/integration/test-plugin
+            mayan build --env stage
+      - run:
+          name: Test mayan deploy
+          command: |
+            cd test/integration/test-plugin
+            mayan deploy --env stage
+      - run:
+          name: Test mayan publish
+          command: |
+            cd test/integration/test-plugin
+            mayan publish --env stage
+
+
 workflows:
   version: 2
   test:

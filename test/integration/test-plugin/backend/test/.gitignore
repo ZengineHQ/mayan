@@ -1,0 +1,13 @@
+/dist
+dist.zip
+
+config-*.json
+!config-test.json
+
+# Version requestify patch on dev folder
+!node_modules
+node_modules/*
+!node_modules/requestify
+!node_modules/firebase
+
+.DS_Store
