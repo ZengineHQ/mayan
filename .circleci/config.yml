@@ -116,7 +116,6 @@ jobs:
             echo 'export PATH="$GOPATH/bin:$PATH"' >> $BASH_ENV
             cp maya.example.json maya.json
             sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
-            cat maya.json
       - run:
           name: Test mayan help
           command: |
