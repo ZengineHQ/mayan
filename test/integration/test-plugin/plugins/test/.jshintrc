@@ -1,0 +1,33 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "futurehostile": true,
+  "esversion": 6,
+  "globals": {
+  	"before": true,
+  	"sinon": true,
+    "assert": true,
+    "expect": true,
+    "fail": true
+  },
+  "latedef": true,
+  "maxcomplexity": 5,
+  "maxdepth": 4,
+  //"maxparams": 5,
+  //"maxstatements": 10,
+  "noarg": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "nonew": true,
+  "singleGroups": true,
+  "strict": "global",
+  "undef": true,
+  "unused": "vars",
+  "jasmine": true,
+  "debug": true,
+  "node": true,
+  "devel": true
+}
