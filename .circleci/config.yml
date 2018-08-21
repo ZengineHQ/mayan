@@ -133,14 +133,14 @@ jobs:
       - run:
           name: Test mayan deploy
           command: |
-            if [ -z "$ZENGINE_API_TOKEN" ]; then
+            if [ -n "$ZENGINE_API_TOKEN" ]; then
               cd test/integration/test-plugin
               mayan deploy --env stage
             fi
       - run:
           name: Test mayan publish
           command: |
-            if [ -z "$ZENGINE_API_TOKEN" ]; then
+            if [ -n "$ZENGINE_API_TOKEN" ]; then
               cd test/integration/test-plugin
               mayan publish --env stage --yes
             fi
