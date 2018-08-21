@@ -143,3 +143,4 @@ workflows:
       - test-node-latest
       - test-node-8
       - test-node-10
+      - integration-tests
