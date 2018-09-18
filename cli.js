@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs')
+const yargs = require('yargs')
 
 function parseConfig(configPath) {
   return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
@@ -13,7 +14,7 @@ updateNotifier({
   updateCheckInterval: 1000 * 60 * 60 * 8 // 8 hours
 }).notify();
 
-require('yargs')
+const argv = yargs
   .commandDir('cmds')
   .option('env', { description: 'Environment name', requiresArg: true })
   .env('MAYAN')

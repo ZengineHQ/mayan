@@ -20,6 +20,7 @@ mayan <command>
 Commands:
   mayan build [plugin]    Build plugin
   mayan deploy [plugin]   Deploy plugin
+  mayan watch [plugin]   Watch plugin(s) and deploy on changes
   mayan publish [plugin]  Publish plugin
   mayan register [plugin]  Register plugin in API
   mayan init [plugin]  Initialize plugin locally
@@ -51,6 +52,7 @@ Whereas mayan strives to be as backwards compatible with original maya as possib
 - Minifies CSS, JS and HTML when `prod` or `production` environment used
 - Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins
 - The maya build artifact location and folder structure has changed
+- `mayan watch [plugin]` will watch your frontend plugin directories and deploy on changes for faster development process (recommended: use `--frontend` flag). Takes all the same commands as `deploy`.
 - *coming soon* `register` command to create/update plugins using the Zengine API and maintain your maya.json ids updated
 - *coming soon* `init` command to initialize a local dev environment either from a fresh git clone (registers plugin if necessary) or from scratch (programatically invokes yeoman generator and then registers and publishes plugin)
 
