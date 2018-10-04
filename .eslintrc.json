@@ -1,14 +1,22 @@
 {
-    "extends": "standard",
-    "env": {
-      "mocha": true,
-      "node": true
-    },
-    "rules": {
-      "space-before-function-paren": ["error", "never"],
-      "padding-line-between-statements": ["error", {
-        "blankLine": "always", "prev": "*", "next": "return"
-      }],
-      "prefer-arrow-callback": "error"
-    }
+  "extends": "standard",
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "prefer-arrow-callback": "error"
+  }
 }
