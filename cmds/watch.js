@@ -30,6 +30,12 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('cache', {
+    describe: 'TIP: Use --no-cache to disable caching of node_modules during watch',
+    type: 'boolean',
+    alias: 'c',
+    default: true
+  })
 }
 
 exports.handler = watch

@@ -27,6 +27,12 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('cache', {
+    describe: 'Use cached node_modules to avoid npm installing',
+    alias: 'c',
+    type: 'boolean',
+    default: false
+  })
 }
 
 exports.handler = build
