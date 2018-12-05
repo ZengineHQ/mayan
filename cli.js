@@ -2,7 +2,7 @@
 const fs = require('fs')
 const yargs = require('yargs')
 
-function parseConfig(configPath) {
+function parseConfig (configPath) {
   return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
 }
 
@@ -12,7 +12,7 @@ const pkg = require('./package.json');
 updateNotifier({
   pkg,
   updateCheckInterval: 1000 * 60 * 60 * 8 // 8 hours
-}).notify();
+}).notify({ isGlobal: true });
 
 const argv = yargs
   .commandDir('cmds')
