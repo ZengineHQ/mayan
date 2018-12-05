@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/ZengineHQ/mayan/compare/1.6.0...1.7.0) (2018-12-05)
+
+
+### Features
+
+* caching options across all build-related commands ([d68941f](https://github.com/ZengineHQ/mayan/commit/d68941f))
+* frontend plugin node_modules cached for quicker reload/redeploy ([d2fc5b7](https://github.com/ZengineHQ/mayan/commit/d2fc5b7))
+* option aliases ([024c405](https://github.com/ZengineHQ/mayan/commit/024c405))
+* transpile object spread 😎 ([7ef7d99](https://github.com/ZengineHQ/mayan/commit/7ef7d99))
+
+
+
 <a name="1.6.0"></a>
 # 1.6.0 (2018-10-12)
 
