@@ -1,6 +1,6 @@
 const watch = require('../lib/watch')
 
-exports.command = 'watch [plugin]'
+exports.command = ['watch [plugin]', 'w']
 
 exports.desc = 'Watch plugin and deploy on changes'
 
@@ -13,21 +13,25 @@ exports.builder = yargs => {
   yargs.option('frontend', {
     describe: 'Only deploy frontend plugins',
     type: 'boolean',
+    alias: 'f',
     default: false
   })
   yargs.option('backend', {
     describe: 'Only deploy backend services',
     type: 'boolean',
+    alias: 'b',
     default: false
   })
   yargs.option('skip-build', {
     describe: 'Skip building and attempt to deploy plugins directly',
     type: 'boolean',
+    alias: 'sb',
     default: false
   })
   yargs.option('skip-minify', {
     describe: 'Skip minifying files when a production environment is detected',
     type: 'boolean',
+    alias: 'sm',
     default: false
   })
   yargs.option('cache', {

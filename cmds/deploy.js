@@ -2,7 +2,7 @@
 
 const deploy = require('../lib/deploy')
 
-exports.command = 'deploy [plugin]'
+exports.command = ['deploy [plugin]', 'd']
 
 exports.desc = 'Deploy plugin'
 
@@ -14,21 +14,25 @@ exports.builder = yargs => {
   })
   yargs.option('frontend', {
     describe: 'Only deploy frontend plugins',
+    alias: 'f',
     type: 'boolean',
     default: false
   })
   yargs.option('backend', {
     describe: 'Only deploy backend services',
+    alias: 'b',
     type: 'boolean',
     default: false
   })
   yargs.option('skip-build', {
     describe: 'Skip building and attempt to deploy plugins directly',
+    alias: 'sb',
     type: 'boolean',
     default: false
   })
   yargs.option('skip-minify', {
     describe: 'Skip minifying files when a production environment is detected',
+    alias: 'sm',
     type: 'boolean',
     default: false
   })

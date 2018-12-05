@@ -2,7 +2,7 @@
 
 const register = require('../lib/register')
 
-exports.command = 'register [plugin]'
+exports.command = ['register [plugin]', 'r']
 
 exports.desc = 'Register plugin in Zengine API'
 

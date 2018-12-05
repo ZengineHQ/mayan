@@ -16,7 +16,7 @@ updateNotifier({
 
 const argv = yargs
   .commandDir('cmds')
-  .option('env', { description: 'Environment name', requiresArg: true })
+  .option('env', { description: 'Environment name', requiresArg: true, alias: 'e' })
   .env('MAYAN')
   .config('config', parseConfig)
   .demandCommand(1, '')
