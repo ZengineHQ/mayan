@@ -17,6 +17,7 @@ updateNotifier({
 
 function onFail(msg, err) {
   console.log()
+  console.log()
   console.log(kleur.red('Failed, please fix the issues above. Use --help for available options.'))
   console.log()
 }
