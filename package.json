@@ -41,7 +41,6 @@
     "ncp": "^2.0.0",
     "ngrok": "^3.1.1",
     "node-sass": "^4.9.2",
-    "nodemon": "^1.18.9",
     "prompt-confirm": "^2.0.4",
     "pump": "^3.0.0",
     "request": "^2.85.0",
