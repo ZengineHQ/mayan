@@ -40,6 +40,12 @@ exports.builder = yargs => {
     alias: 'c',
     default: true
   })
+  yargs.option('proxy', {
+    describe: 'establishes a proxy server for backend services to run locally',
+    type: 'boolean',
+    alias: 'p',
+    default: false
+  })
 }
 
 exports.handler = watch
