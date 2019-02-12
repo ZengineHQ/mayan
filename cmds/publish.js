@@ -90,6 +90,12 @@ exports.builder = yargs => {
     type: 'boolean',
     default: false
   })
+  yargs.option('services', {
+    describe: 'choose specific service(s) to watch in the backend',
+    type: 'array',
+    alias: 's',
+    default: '*'
+  })
 }
 
 exports.handler = publish
