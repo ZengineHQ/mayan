@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/ZengineHQ/mayan/compare/1.7.0...1.7.1) (2019-02-22)
+
+
+### Bug Fixes
+
+* lint issues ([c6d766d](https://github.com/ZengineHQ/mayan/commit/c6d766d))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/ZengineHQ/mayan/compare/1.6.0...1.7.0) (2018-12-05)
 
