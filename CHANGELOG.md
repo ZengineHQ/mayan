@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.2"></a>
+## [1.7.2](https://github.com/ZengineHQ/mayan/compare/1.7.1...1.7.2) (2019-03-05)
+
+
+### Bug Fixes
+
+* Additional logic to use config.json if it exists and env config doesn’t ([79e1d17](https://github.com/ZengineHQ/mayan/commit/79e1d17)), closes [#39](https://github.com/ZengineHQ/mayan/issues/39)
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/ZengineHQ/mayan/compare/1.7.0...1.7.1) (2019-02-22)
 
