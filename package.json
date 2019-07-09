@@ -1,6 +1,6 @@
 {
   "name": "@zenginehq/mayan",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "main": "cli.js",
   "bin": {
     "mayan": "cli.js"
@@ -40,7 +40,7 @@
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "ngrok": "^3.1.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "prompt-confirm": "^2.0.4",
     "pump": "^3.0.0",
     "request": "^2.85.0",
