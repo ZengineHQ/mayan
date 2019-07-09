@@ -1,6 +1,6 @@
 {
   "name": "@zenginehq/mayan",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "main": "cli.js",
   "bin": {
     "mayan": "cli.js"
@@ -37,7 +37,6 @@
     "gulp-uglify": "^3.0.1",
     "hoek": "^5.0.3",
     "http-proxy": "^1.17.0",
-    "jsome": "^2.5.0",
     "kleur": "^2.0.1",
     "listr": "^0.14.1",
     "lodash": "^4.17.11",
