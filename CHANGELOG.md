@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/ZengineHQ/mayan/compare/1.8.1...1.9.0) (2019-08-21)
+
+
+### Features
+
+* error message for unauthorized publish requests ([aa45210](https://github.com/ZengineHQ/mayan/commit/aa45210))
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/evert0n/mayan/compare/1.7.2...1.8.0) (2019-07-09)
 
