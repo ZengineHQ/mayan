@@ -69,6 +69,38 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
     ├── README.md
     └── .gitignore --> include maya.json here because of sensitive config info
 
+## maya.json format
+
+```js
+{
+  "environments": {
+    "dev": {
+      "plugins": {
+        "name-of-directory": { // assumes a frontend code directory at ./plugins/name-of-directory
+          "id": 123,
+          "namespace": "my-cool-plugin",
+          "route": "/my-cool-plugin", // deprecated legacy property (invalid in version 2+)
+          "version": 2 // either a new or migrated plugin (leave property off for deprecated legacy process)
+        }
+      }
+      "default": true // if no --env (-e) is provided, this environment is assumed
+    },
+    "prod": {
+      "plugins": {
+        "name-of-directory": {
+          "id": 456,
+          "namespace": "my-cool-prod-plugin",
+          "route": "/my-cool-prod-plugin",
+          "version": 2
+        }
+      }
+    }
+  }
+}
+```
+
+With the advent of Zengine Plugins 2.0, any new or migrated plugins should specify version 2 in the frontend configuration, so mayan knows which build process to use.
+
 ## Contributing
 
 
