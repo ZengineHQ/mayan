@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/ZengineHQ/mayan/compare/1.9.0...2.1.0) (2020-02-03)
+
+
+### Features
+
+* backend deployment validation error message ([302dacb](https://github.com/ZengineHQ/mayan/commit/302dacb))
+* v2 deploy ZEN-1162 ([476fdd0](https://github.com/ZengineHQ/mayan/commit/476fdd0))
+* v2 watcher ([dc0bc87](https://github.com/ZengineHQ/mayan/commit/dc0bc87))
+* version 2 build ZEN-1162 ([d45e08e](https://github.com/ZengineHQ/mayan/commit/d45e08e))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/ZengineHQ/mayan/compare/1.8.1...1.9.0) (2019-08-21)
 
