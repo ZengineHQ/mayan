@@ -35,13 +35,7 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 ```
 
-## Differences from maya
-
-Whereas mayan strives to be as backwards compatible with original maya as possible, there is one breaking change:
-
-- backend service `maya-build` scripts no longer work and have been replaced with 2 new pre/post build scripts
-
-*New Features*
+*Key Features*
 
 - Write frontend plugins using ES6 features such as arrow functions, let/const, destructuring, rest/spread, etc
 - Write frontend plugin styles using SCSS
@@ -51,11 +45,61 @@ Whereas mayan strives to be as backwards compatible with original maya as possib
 - Ability to `--skip-build` when deploying and publishing and `--skip-deploy` when publishing
 - Minifies CSS, JS and HTML when `prod` or `production` environment used
 - Supports `maya-pre-build` and `maya-post-build` package.json scripts for both backend services and frontend plugins
-- The maya build artifact location and folder structure has changed
 - `mayan watch [plugin]` will watch your frontend plugin directories and deploy on changes for faster development process (recommended: use `--frontend` flag). Takes all the same commands as `deploy`.
 - *coming soon* `register` command to create/update plugins using the Zengine API and maintain your maya.json ids updated
 - *coming soon* `init` command to initialize a local dev environment either from a fresh git clone (registers plugin if necessary) or from scratch (programatically invokes yeoman generator and then registers and publishes plugin)
 
+## Directory Structure
+
+    /my-plugin-repo
+    ├── backend/ --> backend service code
+    ├── plugins --> frontend UI code
+    │   └── name-of-plugin --> can have several of these per repo
+    │       ├── node_modules
+    │       ├── src
+    │       │   ├── example-main.css
+    │       │   ├── example-main.html
+    │       │   └── example-main.controller.js
+    │       ├── package.json
+    │       ├── package-lock.json
+    │       └── plugin-register.js
+    ├── maya_build/ --> build artifacts are kept here
+    ├── maya.json --> config file for various environments/multiple plugins
+    ├── maya.example.json --> save non-sensitive config info in version control
+    ├── README.md
+    └── .gitignore --> include maya.json here because of sensitive config info
+
+## maya.json format
+
+```js
+{
+  "environments": {
+    "dev": {
+      "plugins": {
+        "name-of-directory": { // assumes a frontend code directory at ./plugins/name-of-directory
+          "id": 123,
+          "namespace": "my-cool-plugin",
+          "route": "/my-cool-plugin", // deprecated legacy property (invalid in version 2+)
+          "version": 2 // either a new or migrated plugin (leave property off for deprecated legacy process)
+        }
+      }
+      "default": true // if no --env (-e) is provided, this environment is assumed
+    },
+    "prod": {
+      "plugins": {
+        "name-of-directory": {
+          "id": 456,
+          "namespace": "my-cool-prod-plugin",
+          "route": "/my-cool-prod-plugin",
+          "version": 2
+        }
+      }
+    }
+  }
+}
+```
+
+With the advent of Zengine Plugins 2.0, any new or migrated plugins should specify version 2 in the frontend configuration, so mayan knows which build process to use.
 
 ## Contributing
 

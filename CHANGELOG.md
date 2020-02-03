@@ -12,39 +12,39 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-<a name="1.8.0"></a>
-# [1.8.0](https://github.com/evert0n/mayan/compare/1.7.2...1.8.0) (2019-07-09)
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/evert0n/mayan/compare/1.7.2...2.0.0) (2019-07-09)
 
 
 ### Bug Fixes
 
-* default to configName if the route property is not present. ([b0302b2](https://github.com/evert0n/mayan/commit/b0302b2))
-* default to configName if the route property is not present. ([f579ded](https://github.com/evert0n/mayan/commit/f579ded))
-* default to configName if the route property is not present. ([ed9f95b](https://github.com/evert0n/mayan/commit/ed9f95b))
-* don't error out by resetting headers in proxy ([6f5bb93](https://github.com/evert0n/mayan/commit/6f5bb93))
-* don't error out by resetting headers in proxy ([13b3178](https://github.com/evert0n/mayan/commit/13b3178))
-* don't error out by resetting headers in proxy ([a30896f](https://github.com/evert0n/mayan/commit/a30896f))
-* headers must be set before proxy to avoid expect 100 continue error ([a815606](https://github.com/evert0n/mayan/commit/a815606))
-* headers must be set before proxy to avoid expect 100 continue error ([78a4fb9](https://github.com/evert0n/mayan/commit/78a4fb9))
-* headers must be set before proxy to avoid expect 100 continue error ([f2fe5b4](https://github.com/evert0n/mayan/commit/f2fe5b4))
-* npm audit fix ;) ([56ee94a](https://github.com/evert0n/mayan/commit/56ee94a))
+* default to configName if the route property is not present. ([b0302b2](https://github.com/tehpsalmist/mayan/commit/b0302b2))
+* default to configName if the route property is not present. ([f579ded](https://github.com/tehpsalmist/mayan/commit/f579ded))
+* default to configName if the route property is not present. ([ed9f95b](https://github.com/tehpsalmist/mayan/commit/ed9f95b))
+* don't error out by resetting headers in proxy ([6f5bb93](https://github.com/tehpsalmist/mayan/commit/6f5bb93))
+* don't error out by resetting headers in proxy ([13b3178](https://github.com/tehpsalmist/mayan/commit/13b3178))
+* don't error out by resetting headers in proxy ([a30896f](https://github.com/tehpsalmist/mayan/commit/a30896f))
+* headers must be set before proxy to avoid expect 100 continue error ([a815606](https://github.com/tehpsalmist/mayan/commit/a815606))
+* headers must be set before proxy to avoid expect 100 continue error ([78a4fb9](https://github.com/tehpsalmist/mayan/commit/78a4fb9))
+* headers must be set before proxy to avoid expect 100 continue error ([f2fe5b4](https://github.com/tehpsalmist/mayan/commit/f2fe5b4))
+* npm audit fix ;) ([56ee94a](https://github.com/tehpsalmist/mayan/commit/56ee94a))
 
 
 ### Features
 
-* pelican + mayan === 🔥⚡️💻⚡️🔥 ([349562d](https://github.com/evert0n/mayan/commit/349562d))
-* pelican + mayan === 🔥⚡️💻⚡️🔥 ([70c848e](https://github.com/evert0n/mayan/commit/70c848e))
-* pelican + mayan === 🔥⚡️💻⚡️🔥 ([a47686f](https://github.com/evert0n/mayan/commit/a47686f))
-* redeploy frontend on terminal input ([d44a497](https://github.com/evert0n/mayan/commit/d44a497))
-* redeploy frontend on terminal input ([61b1d0d](https://github.com/evert0n/mayan/commit/61b1d0d))
-* redeploy frontend on terminal input ([040d442](https://github.com/evert0n/mayan/commit/040d442))
-* redeploy frontend on terminal input ([3b00bd8](https://github.com/evert0n/mayan/commit/3b00bd8))
-* use flag to choose specific backend services to deploy ([15e0154](https://github.com/evert0n/mayan/commit/15e0154))
-* use flag to choose specific backend services to deploy ([07e2ca8](https://github.com/evert0n/mayan/commit/07e2ca8))
-* use flag to choose specific backend services to deploy ([71a1921](https://github.com/evert0n/mayan/commit/71a1921))
-* watch frontend on `-f` flag, and on no flags ([a104537](https://github.com/evert0n/mayan/commit/a104537))
-* watch frontend on `-f` flag, and on no flags ([3596f8d](https://github.com/evert0n/mayan/commit/3596f8d))
-* watch frontend on `-f` flag, and on no flags ([3a26012](https://github.com/evert0n/mayan/commit/3a26012))
+* pelican + mayan === 🔥⚡️💻⚡️🔥 ([349562d](https://github.com/tehpsalmist/mayan/commit/349562d))
+* pelican + mayan === 🔥⚡️💻⚡️🔥 ([70c848e](https://github.com/tehpsalmist/mayan/commit/70c848e))
+* pelican + mayan === 🔥⚡️💻⚡️🔥 ([a47686f](https://github.com/tehpsalmist/mayan/commit/a47686f))
+* redeploy frontend on terminal input ([d44a497](https://github.com/tehpsalmist/mayan/commit/d44a497))
+* redeploy frontend on terminal input ([61b1d0d](https://github.com/tehpsalmist/mayan/commit/61b1d0d))
+* redeploy frontend on terminal input ([040d442](https://github.com/tehpsalmist/mayan/commit/040d442))
+* redeploy frontend on terminal input ([3b00bd8](https://github.com/tehpsalmist/mayan/commit/3b00bd8))
+* use flag to choose specific backend services to deploy ([15e0154](https://github.com/tehpsalmist/mayan/commit/15e0154))
+* use flag to choose specific backend services to deploy ([07e2ca8](https://github.com/tehpsalmist/mayan/commit/07e2ca8))
+* use flag to choose specific backend services to deploy ([71a1921](https://github.com/tehpsalmist/mayan/commit/71a1921))
+* watch frontend on `-f` flag, and on no flags ([a104537](https://github.com/tehpsalmist/mayan/commit/a104537))
+* watch frontend on `-f` flag, and on no flags ([3596f8d](https://github.com/tehpsalmist/mayan/commit/3596f8d))
+* watch frontend on `-f` flag, and on no flags ([3a26012](https://github.com/tehpsalmist/mayan/commit/3a26012))
 
 
 
