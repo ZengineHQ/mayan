@@ -4,6 +4,10 @@
     "mocha": true,
     "node": true
   },
+  "globals": {
+    "assert": true,
+    "expect": true
+  },
   "rules": {
     "prefer-arrow-callback": "error"
   }
