@@ -44,7 +44,7 @@
 				},
 				"other-test": {
 					"id": 435,
-					"namespace": "/mayan-other-test-deploy-main-stage",
+					"namespace": "mayan-other-test-deploy-main-stage",
 					"services": {
 						"test": {
 							"id": 228
@@ -71,7 +71,7 @@
 				},
 				"other-test": {
 					"id": 4,
-					"namespace": "/mayan-other-test-deploy",
+					"namespace": "mayan-other-test-deploy",
 					"services": {
 						"test": {
 							"id": 4
