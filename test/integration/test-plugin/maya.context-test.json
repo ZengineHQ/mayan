@@ -1,7 +1,7 @@
 {
 	"environments": {
 		"dev": {
-			"access_token": "",
+			"access_token": "dev token",
 			"plugins": {
 				"test": {
 					"id": 1,
@@ -57,7 +57,7 @@
 			}
 		},
 		"prod": {
-			"access_token": "",
+			"access_token": "prod token",
 			"plugins": {
 				"test": {
 					"id": 3,

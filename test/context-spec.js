@@ -157,6 +157,7 @@ describe('context', () => {
     expect(ctx).to.deep.equal({
       ...argv,
       env: 'dev',
+      accessToken: 'dev token',
       plugins: [
         {
           configName: 'test',
@@ -222,6 +223,7 @@ describe('context', () => {
 
     expect(ctx).to.deep.equal({
       ...argv,
+      accessToken: '{{API_TOKEN}}',
       plugins: [
         {
           configName: 'test',
@@ -272,6 +274,7 @@ describe('context', () => {
     expect(ctx).to.deep.equal({
       ...argv,
       env: 'prod',
+      accessToken: 'prod token',
       plugins: [
         {
           configName: 'test',
