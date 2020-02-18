@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/ZengineHQ/mayan/compare/2.1.0...2.1.1) (2020-02-07)
+
+
+### Bug Fixes
+
+* handle context immutably ([040809a](https://github.com/ZengineHQ/mayan/commit/040809a))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/ZengineHQ/mayan/compare/1.9.0...2.1.0) (2020-02-03)
 
