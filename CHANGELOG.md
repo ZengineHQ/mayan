@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/ZengineHQ/mayan/compare/2.1.1...2.1.2) (2020-02-19)
+
+
+### Bug Fixes
+
+* add environments to context object ([a95d106](https://github.com/ZengineHQ/mayan/commit/a95d106))
+* exit backend watch early if no backend services ([392c991](https://github.com/ZengineHQ/mayan/commit/392c991))
+* initial fix of specified plugin error ([58bc8e6](https://github.com/ZengineHQ/mayan/commit/58bc8e6))
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/ZengineHQ/mayan/compare/2.1.0...2.1.1) (2020-02-07)
 
