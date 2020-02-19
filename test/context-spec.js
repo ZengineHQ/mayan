@@ -158,6 +158,7 @@ describe('context', () => {
       ...argv,
       env: 'dev',
       accessToken: 'dev token',
+      apiEndpoint: 'api.zenginehq.com',
       plugins: [
         {
           configName: 'test',
@@ -224,6 +225,7 @@ describe('context', () => {
     expect(ctx).to.deep.equal({
       ...argv,
       accessToken: '{{API_TOKEN}}',
+      apiEndpoint: 'stage-api.zenginehq.com',
       plugins: [
         {
           configName: 'test',
@@ -275,6 +277,7 @@ describe('context', () => {
       ...argv,
       env: 'prod',
       accessToken: 'prod token',
+      apiEndpoint: 'api.zenginehq.com',
       plugins: [
         {
           configName: 'test',
