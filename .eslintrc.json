@@ -4,19 +4,11 @@
     "mocha": true,
     "node": true
   },
+  "globals": {
+    "assert": true,
+    "expect": true
+  },
   "rules": {
-    "space-before-function-paren": [
-      "error",
-      "never"
-    ],
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "return"
-      }
-    ],
     "prefer-arrow-callback": "error"
   }
 }
