@@ -1,0 +1,86 @@
+{
+	"environments": {
+		"dev": {
+			"access_token": "",
+			"plugins": {
+				"test": {
+					"id": 1,
+					"namespace": "mayanTestDeployDev",
+					"route": "/mayan-test-deploy-main-dev",
+					"services": {
+						"test": {
+							"id": 1
+						}
+					}
+				},
+				"other-test": {
+					"id": 2,
+					"namespace": "mayan-other-test-deploy-dev",
+					"services": {
+						"test": {
+							"id": 2
+						},
+						"other-test": {
+							"id": 3
+						}
+					}
+				}
+			}
+		},
+		"stage": {
+			"api_endpoint": "stage-api.zenginehq.com",
+			"access_token": "{{API_TOKEN}}",
+			"plugins": {
+				"test": {
+					"id": 434,
+					"namespace": "mayanTestDeploy",
+					"route": "/mayan-test-deploy-main-stage",
+					"services": {
+						"test": {
+							"id": 227
+						}
+					}
+				},
+				"other-test": {
+					"id": 435,
+					"namespace": "/mayan-other-test-deploy-main-stage",
+					"services": {
+						"test": {
+							"id": 228
+						},
+						"other-test": {
+							"id": 229
+						}
+					}
+				}
+			}
+		},
+		"prod": {
+			"access_token": "",
+			"plugins": {
+				"test": {
+					"id": 3,
+					"namespace": "mayanTestDeploy",
+					"route": "/mayan-test-deploy-main",
+					"services": {
+						"test": {
+							"id": 3
+						}
+					}
+				},
+				"other-test": {
+					"id": 4,
+					"namespace": "/mayan-other-test-deploy",
+					"services": {
+						"test": {
+							"id": 4
+						},
+						"other-test": {
+							"id": 5
+						}
+					}
+				}
+			}
+		}
+	}
+}

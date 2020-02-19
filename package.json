@@ -1,12 +1,13 @@
 {
   "name": "@zenginehq/mayan",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "cli.js",
   "bin": {
     "mayan": "cli.js"
   },
   "scripts": {
     "test": "mocha --require test/support/chai.js --exit",
+    "tdd": "mocha --require test/support/chai.js --watch",
     "eslint": "eslint lib/ cmds/ test/",
     "release": "npm run eslint && standard-version -t ''"
   },
