@@ -3,6 +3,7 @@
 const { createNewContext } = require('../lib/context')
 const mayaJSON = require('./integration/test-plugin/maya.context-test.json')
 const mayaJSONNoDefaults = require('./integration/test-plugin/maya.context-test-no-defaults.json')
+const mayaJSONNoServices = require('./integration/test-plugin/maya.context-test-no-services.json')
 
 describe('context', () => {
   it('should fail with an empty argv object', () => {
@@ -305,6 +306,159 @@ describe('context', () => {
               id: 5
             }
           ]
+        }
+      ]
+    })
+  })
+  //
+
+  it('should process argv for `mayan watch/build/deploy/publish` using all defaults successfully when no services are present', async () => {
+    const argv = {
+      _: [ 'watch' ],
+      frontend: false,
+      f: false,
+      backend: false,
+      b: false,
+      'skip-build': false,
+      sb: false,
+      skipBuild: false,
+      'skip-minify': false,
+      sm: false,
+      skipMinify: false,
+      cache: true,
+      c: true,
+      proxy: false,
+      p: false,
+      'skip-deploy': false,
+      sd: false,
+      skipDeploy: false,
+      plugin: '*',
+      services: [ '*' ],
+      s: [ '*' ],
+      '$0': 'mayan',
+      config: './maya.json'
+    }
+
+    const ctx = await createNewContext(argv, mayaJSONNoServices)
+
+    expect(ctx).to.deep.equal({
+      ...argv,
+      env: 'dev',
+      accessToken: 'dev token',
+      apiEndpoint: 'api.zenginehq.com',
+      plugins: [
+        {
+          configName: 'test',
+          id: 1,
+          namespace: 'mayanTestDeployDev',
+          route: '/mayan-test-deploy-main-dev',
+          services: []
+        },
+        {
+          configName: 'other-test',
+          id: 2,
+          namespace: 'mayan-other-test-deploy-dev',
+          services: []
+        }
+      ]
+    })
+  })
+
+  it('should process argv for `mayan watch/build/deploy/publish test -e stage` successfully when no services are present', async () => {
+    const argv = {
+      _: [ 'w' ],
+      frontend: false,
+      f: false,
+      backend: false,
+      b: true,
+      'skip-build': false,
+      sb: false,
+      skipBuild: false,
+      'skip-minify': false,
+      sm: false,
+      skipMinify: false,
+      cache: true,
+      c: true,
+      proxy: false,
+      p: false,
+      'skip-deploy': false,
+      sd: false,
+      skipDeploy: false,
+      e: 'stage',
+      env: 'stage',
+      plugin: 'test',
+      services: [ '*' ],
+      s: [ '*' ],
+      '$0': 'mayan',
+      config: './maya.json'
+    }
+
+    const ctx = await createNewContext(argv, mayaJSONNoServices)
+
+    expect(ctx).to.deep.equal({
+      ...argv,
+      accessToken: '{{API_TOKEN}}',
+      apiEndpoint: 'stage-api.zenginehq.com',
+      plugins: [
+        {
+          configName: 'test',
+          id: 434,
+          namespace: 'mayanTestDeploy',
+          route: '/mayan-test-deploy-main-stage',
+          services: []
+        }
+      ]
+    })
+  })
+
+  it('should process argv for `mayan watch/build/deploy/publish -e prod` successfully when no services are present', async () => {
+    const argv = {
+      _: [ 'watch' ],
+      frontend: false,
+      f: false,
+      backend: false,
+      b: false,
+      'skip-build': false,
+      sb: false,
+      skipBuild: false,
+      'skip-minify': false,
+      sm: false,
+      skipMinify: false,
+      cache: true,
+      c: true,
+      proxy: false,
+      p: false,
+      'skip-deploy': false,
+      sd: false,
+      skipDeploy: false,
+      e: 'prod',
+      env: 'prod',
+      plugin: '*',
+      services: [ '*' ],
+      s: [ '*' ],
+      '$0': 'mayan'
+    }
+
+    const ctx = await createNewContext(argv, mayaJSONNoServices)
+
+    expect(ctx).to.deep.equal({
+      ...argv,
+      env: 'prod',
+      accessToken: 'prod token',
+      apiEndpoint: 'api.zenginehq.com',
+      plugins: [
+        {
+          configName: 'test',
+          id: 3,
+          namespace: 'mayanTestDeploy',
+          route: '/mayan-test-deploy-main',
+          services: []
+        },
+        {
+          configName: 'other-test',
+          id: 4,
+          namespace: 'mayan-other-test-deploy',
+          services: []
         }
       ]
     })
