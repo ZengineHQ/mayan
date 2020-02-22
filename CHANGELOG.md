@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/ZengineHQ/mayan/compare/2.1.2...2.2.0) (2020-02-21)
+
+
+### Features
+
+* env variables in maya.json get injected into build/watch process ([bc20fad](https://github.com/ZengineHQ/mayan/commit/bc20fad))
+
+
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/ZengineHQ/mayan/compare/2.1.1...2.1.2) (2020-02-19)
 

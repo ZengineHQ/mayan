@@ -1,6 +1,6 @@
 {
   "name": "@zenginehq/mayan",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "main": "cli.js",
   "bin": {
     "mayan": "cli.js"
