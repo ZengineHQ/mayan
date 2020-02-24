@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/ZengineHQ/mayan/compare/2.2.0...2.2.1) (2020-02-24)
+
+
+### Bug Fixes
+
+* prevent failing build of services when none exist with default options ([599ca48](https://github.com/ZengineHQ/mayan/commit/599ca48))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/ZengineHQ/mayan/compare/2.1.2...2.2.0) (2020-02-21)
 
