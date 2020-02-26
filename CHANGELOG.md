@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.2"></a>
+## [2.2.2](https://github.com/ZengineHQ/mayan/compare/2.2.1...2.2.2) (2020-02-26)
+
+
+### Bug Fixes
+
+* empty env during frontend watch with defaults ([75a990f](https://github.com/ZengineHQ/mayan/commit/75a990f))
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/ZengineHQ/mayan/compare/2.2.0...2.2.1) (2020-02-24)
 
