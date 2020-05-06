@@ -69,18 +69,42 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
     ├── README.md
     └── .gitignore --> include maya.json here because of sensitive config info
 
-## maya.json format
+## Running Backend Services Locally
+
+You can expose your local backend services to the internet using `mayan watch --proxy`. Configure the proxy server by placing a `proxy_settings` key at the top level, the plugin level, and/or the backend service level. These settings inherit up the "chain," with the service-level overriding all else. Any option could feasibly be placed at any level, but obviously some options more naturally reside in certain locations. The only caveats to that would be:
+
+  1. `subdomain`, `authtoken`, `ngrokPort` belong at the top level because these only get referenced once to set up the ngrok tunnel
+
+  2. `port` belongs at the service level (leaving this out will default to 3000 and increment upwards to avoid using the same port for multiple services)
+
+Once you run mayan against a backend service the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
+
+## `maya.json` format
 
 ```js
 {
   "environments": {
     "dev": {
       "plugins": {
-        "name-of-directory": { // assumes a frontend code directory at ./plugins/name-of-directory
+        "name-of-directory": { // assumes a frontend code repository at ./plugins/name-of-directory
           "id": 123,
           "namespace": "my-cool-plugin",
           "route": "/my-cool-plugin", // deprecated legacy property (invalid in version 2+)
-          "version": 2 // either a new or migrated plugin (leave property off for deprecated legacy process)
+          "version": 2, // either a new or migrated plugin (leave property off for deprecated legacy process)
+          "services": {
+            "my-cool-service": {
+              "id": 321,
+              "route": "/my-cool-route",
+              "proxy_settings": { // service-level proxy settings
+                "x-zengine-webhook-key": "reallylongstringofcharacters",
+                "port": 3008 // hardcoded specific port, used whether you're running --proxy or not
+              }
+            }
+          },
+          "proxy_settings": { // plugin-level proxy settings
+            "x-firebase-url": "https://some-url-im-not-comfortable-unveiling.firebaseio.com/",
+            "x-firebase-secret": "correspondingsecretforfirebase"
+          }
         }
       }
       "default": true // if no --env (-e) is provided, this environment is assumed
@@ -91,10 +115,18 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
           "id": 456,
           "namespace": "my-cool-prod-plugin",
           "route": "/my-cool-prod-plugin",
-          "version": 2
+          "version": 2,
+          "service": {
+            "id": 789
+          }
         }
       }
     }
+  },
+  "proxy_settings": { // top-level proxy settings
+    "subdomain": "", // If you have a paid ngrok account
+    "authtoken": "", // If you have a paid ngrok account
+    "ngrokPort": 0 // 0 will be ignored and default to 5050
   }
 }
 ```
@@ -102,7 +134,6 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
 With the advent of Zengine Plugins 2.0, any new or migrated plugins should specify version 2 in the frontend configuration, so mayan knows which build process to use.
 
 ## Contributing
-
 
 ### Fork
 
