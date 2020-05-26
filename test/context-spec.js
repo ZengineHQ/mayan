@@ -180,15 +180,28 @@ describe('context', () => {
           services: [
             {
               configName: 'test',
-              id: 2
+              id: 2,
+              proxy_settings: {
+                'x-zengine-webhook-key': 'reallylongstringofcharacters',
+                port: 3008
+              }
             },
             {
               configName: 'other-test',
               id: 3
             }
-          ]
+          ],
+          proxy_settings: {
+            'x-firebase-url': 'https://url.firebaseio.com/',
+            'x-firebase-secret': 'secret'
+          }
         }
-      ]
+      ],
+      proxy_settings: {
+        subdomain: '',
+        authtoken: '',
+        ngrokPort: 0
+      }
     })
   })
 
@@ -240,7 +253,12 @@ describe('context', () => {
             }
           ]
         }
-      ]
+      ],
+      proxy_settings: {
+        subdomain: '',
+        authtoken: '',
+        ngrokPort: 0
+      }
     })
   })
 
@@ -307,7 +325,12 @@ describe('context', () => {
             }
           ]
         }
-      ]
+      ],
+      proxy_settings: {
+        subdomain: '',
+        authtoken: '',
+        ngrokPort: 0
+      }
     })
   })
   //
@@ -360,7 +383,8 @@ describe('context', () => {
           namespace: 'mayan-other-test-deploy-dev',
           services: []
         }
-      ]
+      ],
+      proxy_settings: undefined
     })
   })
 
@@ -407,7 +431,8 @@ describe('context', () => {
           route: '/mayan-test-deploy-main-stage',
           services: []
         }
-      ]
+      ],
+      proxy_settings: undefined
     })
   })
 
@@ -460,7 +485,8 @@ describe('context', () => {
           namespace: 'mayan-other-test-deploy',
           services: []
         }
-      ]
+      ],
+      proxy_settings: undefined
     })
   })
 })

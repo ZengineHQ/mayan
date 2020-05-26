@@ -47,7 +47,7 @@ exports.builder = yargs => {
     default: false
   })
   yargs.option('skip-deploy', {
-    describe: 'skips deployment of backend services during watch and engages the proxy server',
+    describe: 'skips deployment of backend services during watch',
     type: 'boolean',
     alias: 'sd',
     default: false
