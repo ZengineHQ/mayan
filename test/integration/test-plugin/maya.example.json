@@ -17,7 +17,7 @@
 			"default": true
 		},
 		"stage": {
-			"api_endpoint": "stage-api.zenginehq.com",
+			"api_endpoint": "api.stage.zenginehq.com",
 			"access_token": "{{API_TOKEN}}",
 			"plugins": {
 				"test": {
