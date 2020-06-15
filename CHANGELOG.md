@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.5.1"></a>
+## [2.5.1](https://github.com/ZengineHQ/mayan/compare/2.5.0...2.5.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* safe json parse ([c77480a](https://github.com/ZengineHQ/mayan/commit/c77480a))
+
+
+
 <a name="2.5.0"></a>
 # [2.5.0](https://github.com/ZengineHQ/mayan/compare/v2.4.0...v2.5.0) (2020-05-26)
 
