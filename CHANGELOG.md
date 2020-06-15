@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/ZengineHQ/mayan/compare/v2.4.0...v2.5.0) (2020-05-26)
+
+
+### Bug Fixes
+
+* add top-level proxy_settings to context ([aac7dc6](https://github.com/ZengineHQ/mayan/commit/aac7dc6))
+* kill spawn after disconnect ([336ad06](https://github.com/ZengineHQ/mayan/commit/336ad06))
+* only deploy once per backend event ([6b8c28e](https://github.com/ZengineHQ/mayan/commit/6b8c28e))
+* print backend stderr without exiting ([5c49c03](https://github.com/ZengineHQ/mayan/commit/5c49c03))
+
+
+### Features
+
+* don't automatically run proxy when skipping backend deploy ([b48f23b](https://github.com/ZengineHQ/mayan/commit/b48f23b))
+* run maya-pre-build command before watching ([b61378e](https://github.com/ZengineHQ/mayan/commit/b61378e))
+
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/ZengineHQ/mayan/compare/v2.3.0...v2.4.0) (2020-03-27)
 
