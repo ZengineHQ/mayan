@@ -79,6 +79,45 @@ You can expose your local backend services to the internet using `mayan watch --
 
 Once you run mayan against a backend service the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
 
+### stdin commands
+
+While your backend services are running, you can send these commands to mayan using stdin in the same terminal where mayan is running:
+
+`.exit` will shut down all processes gracefully (same as ctrl+C)
+
+`[backend service name]` typing the name of a service will trigger a reload of that service, similar to saving a file in that service's watched directories.
+
+> ex: to reload the `calculate` service, type "calculate" and hit enter
+
+`webhook-update [webhook ID]` will use the access token provided in your current environment to fetch the url of the webhook you specified with the second argument, then update that webhook's url to point to your ngrok tunnel, thus routing all of that webhook's traffic to your local service. **NB: this command requires the `--proxy` flag**
+
+> ex:
+> ```sh
+> $ mayan w --sd --proxy
+> # output from command indicating services are running
+> https://6e12515eb18c.ngrok.io --> copied to clipboard!
+> Inspect this connection in your browser at http://127.0.0.1:4040
+>
+> Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> Listening on http://:::3001/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> # user input while service is running
+> webhook-update 123456
+> # output in response to user's command
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+>
+> alias: `wu`
+>
+> ex:
+> ```sh
+> wu 123456
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+
 ## `maya.json` format
 
 ```js
