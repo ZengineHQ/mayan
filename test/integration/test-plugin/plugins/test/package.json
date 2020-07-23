@@ -1,9 +1,52 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "Test",
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {}
+	"name": "test",
+	"version": "1.0.0",
+	"description": "Test",
+	"private": true,
+	"keywords": [
+		"plugin",
+		"wrapper",
+		"v2",
+		"angularjs"
+	],
+	"scripts": {
+		"start": "rm -rf dist; parcel serve wrapper/index.html --https",
+		"build": "rm -rf dist; parcel build wrapper/index.html --no-cache",
+		"lint-legacy": "npm run lint-wrapper && npm run lint-src && echo 'Successfully Linted!'",
+		"lint-wrapper": "eslint -c ./.eslintrc-wrapper.json ./wrapper",
+		"lint-src": "eslint -c ./.eslintrc-src.json ./src"
+	},
+	"devDependencies": {
+		"eslint": "^6.6.0",
+		"parcel-bundler": "^1.12.3",
+		"parcel-plugin-zengine-migrator": "github:ZengineHQ/parcel-plugin-zengine-migrator",
+		"sass": "^1.22.12"
+	},
+	"legacyDependencies": {},
+	"dependencies": {
+		"@zenginehq/post-rpc-client": "^0.9.0",
+		"ace-builds": "1.4.6",
+		"angular": "1.2.27",
+		"angular-bootstrap": "github:Wizehive/bootstrap-bower",
+		"angular-local-storage": "0.1.4",
+		"angular-sanitize": "1.2.27",
+		"angular-ui-ace": "github:Wizehive/ui-ace",
+		"angular-ui-sortable": "github:Wizehive/ui-sortable",
+		"angular-ui-tinymce": "github:Wizehive/ui-tinymce",
+		"angularfire": "github:Wizehive/angularFire#v0.8.0",
+		"bignumber.js": "github:Wizehive/bignumber.js#v2.4.0",
+		"firebase": "github:Wizehive/firebase-bower#v1.0.17-1",
+		"handlebars": "1.3.0",
+		"content-sizer": "github:ZengineHQ/content-sizer",
+		"jquery": "1.12.4",
+		"jquery-ui": "1.10.5",
+		"moment": "github:Wizehive/moment#2.8.3",
+		"ng-dropdown-multiselect": "1.0.1",
+		"ng-grid": "github:Wizehive/ng-grid#2.x",
+		"ng-showdown": "github:Wizehive/ng-showdown#1.1.2",
+		"showdown": "github:Wizehive/showdown#1.7.6",
+		"tinymce": "4.9.10",
+		"ui-select": "github:Wizehive/ui-select",
+		"zn-filter-matcher": "1.2.3"
+	}
 }

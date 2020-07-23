@@ -1,1 +1,13 @@
+.cache
+.legacy-output
+.vscode
+dist
+dist.zip
+node_modules
+
+plugin.json
+
+
+# Original File:
+
 .DS_Store
