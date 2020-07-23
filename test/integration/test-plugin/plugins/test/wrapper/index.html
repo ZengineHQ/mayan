@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wizehive">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="plugin.scss">
+
+  <script src="plugin.js"></script>
+</head>
+
+<body ng-class="type">
+  <nav ng-if="type === 'settings'">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-icon"><i class="icon-cog"></i></li>
+      <li><a href="javascript:void(0)" ng-click="navigateTo('/admin')">Settings &amp; Tools</a></li>
+      <li><a href="javascript:void(0)">{{name}}</a></li>
+    </ul>
+  </nav>
+  <script type="text/ng-template" id="modal-template">
+    <div class="wrapper-modal" ng-class="classes" style="width: 100% !important;">
+      <div ng-if="header" class="modal-header" ng-class="header.classes">
+        <a ng-show="closeButton !== false && !error" ng-click="close()" class="close">&times</a>
+        <h3><span ng-if="header.icon"><i ng-class="header.icon"></i></span>{{title}}</h3>
+      </div>
+      <div class="modal-body" ng-include="templateUrl"></div>
+      <div class="modal-footer">
+        <button ng-show="!cancelButton && closeButton !== false" class="btn btn-small" ng-click="close()">Close</button>
+        <button ng-show="cancelButton && closeButton !== false" class="btn btn-small" ng-click="close()">Cancel</button>
+
+		<span ng-if="0" ng-repeat-start="btn in btns"></span>
+		<button class="btn btn-small" ng-if="!btn.template" ng-class="{'btn-primary': btn.primary, 'btn-success': btn.success, 'btn-danger': btn.danger}" ng-disabled="btn.disabled" ng-click="callbacks[btn.name]()">
+		  {{btn.label || btn.name}}
+		</button>
+		<span ng-if="btn.template" ng-include="btn.name" ng-click="callbacks[btn.name]()"></span>
+		<span ng-if="0" ng-repeat-end></span>
+      </div>
+    </div>
+  </script>
+  %PLUGIN_HTML%
+</body>
+
+</html>
