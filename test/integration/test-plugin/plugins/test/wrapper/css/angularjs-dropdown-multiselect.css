@@ -1,0 +1,23 @@
+/* multiselect-parent btn-group dropdown-multiselect open
+*/
+.multiselect-parent {
+  width: 100%;
+}
+
+.multiselect-parent button:first-child {
+  width: 100%;
+  text-align: right;
+}
+
+.multiselect-parent .dropdown-menu {
+  font-size: 100%;
+}
+
+.multiselect-parent .dropdown-menu > li > a {
+  font-size: 14px;
+}
+
+.glyphicon-none:before {
+    content: "\2122";
+    color: transparent !important;
+}

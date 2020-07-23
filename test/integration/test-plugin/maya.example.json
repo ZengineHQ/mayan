@@ -7,6 +7,7 @@
 					"id": 1,
 					"namespace": "mayanTestDeployDev",
 					"route": "/mayan-test-deploy-main-dev",
+					"version": 2,
 					"services": {
 						"test": {
 							"id": 1
@@ -24,6 +25,7 @@
 					"id": 434,
 					"namespace": "mayanTestDeploy",
 					"route": "/mayan-test-deploy-main-stage",
+					"version": 2,
 					"services": {
 						"test": {
 							"id": 227
@@ -39,6 +41,7 @@
 					"id": 3,
 					"namespace": "mayanTestDeploy",
 					"route": "/mayan-test-deploy-main",
+					"version": 2,
 					"services": {
 						"test": {
 							"id": 3
