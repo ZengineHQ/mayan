@@ -11,7 +11,7 @@
 	],
 	"scripts": {
 		"start": "rm -rf dist; parcel serve wrapper/index.html --https",
-		"build": "rm -rf dist; parcel build wrapper/index.html --no-cache",
+		"build": "npm i && rm -rf dist; parcel build wrapper/index.html --no-cache",
 		"lint-legacy": "npm run lint-wrapper && npm run lint-src && echo 'Successfully Linted!'",
 		"lint-wrapper": "eslint -c ./.eslintrc-wrapper.json ./wrapper",
 		"lint-src": "eslint -c ./.eslintrc-src.json ./src"
