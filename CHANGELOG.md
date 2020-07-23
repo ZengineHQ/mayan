@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.6.1"></a>
+## [2.6.1](https://github.com/ZengineHQ/mayan/compare/2.6.0...2.6.1) (2020-07-23)
+
+
+### Bug Fixes
+
+* enable cors for proxy server ([f06411b](https://github.com/ZengineHQ/mayan/commit/f06411b))
+
+
+
 <a name="2.6.0"></a>
 # [2.6.0](https://github.com/ZengineHQ/mayan/compare/2.5.1...2.6.0) (2020-07-09)
 
