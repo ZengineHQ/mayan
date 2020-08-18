@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. See [standa
 ## [2.6.2](https://github.com/ZengineHQ/mayan/compare/2.6.1...2.6.2) (2020-08-18)
 
 
+### Features
+
+* provide NGROK_URL env var to frontend watch process ([82bbd43](https://github.com/ZengineHQ/mayan/commit/82bbd43))
+
 
 <a name="2.6.1"></a>
 ## [2.6.1](https://github.com/ZengineHQ/mayan/compare/2.6.0...2.6.1) (2020-07-23)
