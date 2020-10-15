@@ -124,6 +124,8 @@ While your backend services are running, you can send these commands to mayan us
 {
   "environments": {
     "dev": {
+      "api_endpoint": "api.wizehive-dev.com -> you probably don't need this field",
+      "access_token": "your token here -- keep out of source control",
       "plugins": {
         "name-of-directory": { // assumes a frontend code repository at ./plugins/name-of-directory
           "id": 123,
@@ -149,6 +151,8 @@ While your backend services are running, you can send these commands to mayan us
       "default": true // if no --env (-e) is provided, this environment is assumed
     },
     "prod": {
+      "api_endpoint": "api.zenginehq.com -> default value, you probably don't need this",
+      "access_token": "your token here -- keep out of source control",
       "plugins": {
         "name-of-directory": {
           "id": 456,
