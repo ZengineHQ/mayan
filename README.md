@@ -118,6 +118,35 @@ While your backend services are running, you can send these commands to mayan us
 > https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
 > ```
 
+Or, for scheduled webhooks:
+
+> ```sh
+> $ mayan w --sd --proxy
+> # output from command indicating services are running
+> https://6e12515eb18c.ngrok.io --> copied to clipboard!
+> Inspect this connection in your browser at http://127.0.0.1:4040
+>
+> Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> Listening on http://:::3001/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> # user input while service is running
+> scheduled-webhook-update 123456
+> # output in response to user's command
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+>
+> alias: `swu`
+>
+> ex:
+> ```sh
+> swu 123456
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+
+
 ## `maya.json` format
 
 ```js
