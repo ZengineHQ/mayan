@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.7.0](https://github.com/ZengineHQ/mayan/compare/2.6.2...2.7.0) (2020-12-17)
+
+
+### Features
+
+* allow proxying scheduled webhooks ([3a685c5](https://github.com/ZengineHQ/mayan/commit/3a685c5e5cd073c4c90b0dc86aea9e90d9a99dee))
 
 <a name="2.6.2"></a>
 ## [2.6.2](https://github.com/ZengineHQ/mayan/compare/2.6.1...2.6.2) (2020-08-18)
