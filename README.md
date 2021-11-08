@@ -69,32 +69,136 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
     ├── README.md
     └── .gitignore --> include maya.json here because of sensitive config info
 
-## maya.json format
+## Running Backend Services Locally
+
+You can expose your local backend services to the internet using `mayan watch --proxy`. Configure the proxy server by placing a `proxy_settings` key at the top level, the plugin level, and/or the backend service level. These settings inherit up the "chain," with the service-level overriding all else. Any option could feasibly be placed at any level, but obviously some options more naturally reside in certain locations. The only caveats to that would be:
+
+  1. `subdomain`, `authtoken`, `ngrokPort` belong at the top level because these only get referenced once to set up the ngrok tunnel
+
+  2. `port` belongs at the service level (leaving this out will default to 3000 and increment upwards to avoid using the same port for multiple services)
+
+Once you run mayan against a backend service the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
+
+### stdin commands
+
+While your backend services are running, you can send these commands to mayan using stdin in the same terminal where mayan is running:
+
+`.exit` will shut down all processes gracefully (same as ctrl+C)
+
+`[backend service name]` typing the name of a service will trigger a reload of that service, similar to saving a file in that service's watched directories.
+
+> ex: to reload the `calculate` service, type "calculate" and hit enter
+
+`webhook-update [webhook ID]` will use the access token provided in your current environment to fetch the url of the webhook you specified with the second argument, then update that webhook's url to point to your ngrok tunnel, thus routing all of that webhook's traffic to your local service. **NB: this command requires the `--proxy` flag**
+
+> ex:
+> ```sh
+> $ mayan w --sd --proxy
+> # output from command indicating services are running
+> https://6e12515eb18c.ngrok.io --> copied to clipboard!
+> Inspect this connection in your browser at http://127.0.0.1:4040
+>
+> Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> Listening on http://:::3001/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> # user input while service is running
+> webhook-update 123456
+> # output in response to user's command
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+>
+> alias: `wu`
+>
+> ex:
+> ```sh
+> wu 123456
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+
+Or, for scheduled webhooks:
+
+> ```sh
+> $ mayan w --sd --proxy
+> # output from command indicating services are running
+> https://6e12515eb18c.ngrok.io --> copied to clipboard!
+> Inspect this connection in your browser at http://127.0.0.1:4040
+>
+> Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> Listening on http://:::3001/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
+>
+> # user input while service is running
+> scheduled-webhook-update 123456
+> # output in response to user's command
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+>
+> alias: `swu`
+>
+> ex:
+> ```sh
+> swu 123456
+> Successfully updated webhook url to:
+> https://6e12515eb18c.ngrok.io/workspaces/123/nameSpace/endpoint?query=param
+> ```
+
+
+## `maya.json` format
 
 ```js
 {
   "environments": {
     "dev": {
+      "api_endpoint": "api.wizehive-dev.com -> you probably don't need this field",
+      "access_token": "your token here -- keep out of source control",
       "plugins": {
-        "name-of-directory": { // assumes a frontend code directory at ./plugins/name-of-directory
+        "name-of-directory": { // assumes a frontend code repository at ./plugins/name-of-directory
           "id": 123,
           "namespace": "my-cool-plugin",
           "route": "/my-cool-plugin", // deprecated legacy property (invalid in version 2+)
-          "version": 2 // either a new or migrated plugin (leave property off for deprecated legacy process)
+          "version": 2, // either a new or migrated plugin (leave property off for deprecated legacy process)
+          "services": {
+            "my-cool-service": {
+              "id": 321,
+              "route": "/my-cool-route",
+              "proxy_settings": { // service-level proxy settings
+                "x-zengine-webhook-key": "reallylongstringofcharacters",
+                "port": 3008 // hardcoded specific port, used whether you're running --proxy or not
+              }
+            }
+          },
+          "proxy_settings": { // plugin-level proxy settings
+            "x-firebase-url": "https://some-url-im-not-comfortable-unveiling.firebaseio.com/",
+            "x-firebase-secret": "correspondingsecretforfirebase"
+          }
         }
       }
       "default": true // if no --env (-e) is provided, this environment is assumed
     },
     "prod": {
+      "api_endpoint": "api.zenginehq.com -> default value, you probably don't need this",
+      "access_token": "your token here -- keep out of source control",
       "plugins": {
         "name-of-directory": {
           "id": 456,
           "namespace": "my-cool-prod-plugin",
           "route": "/my-cool-prod-plugin",
-          "version": 2
+          "version": 2,
+          "service": {
+            "id": 789
+          }
         }
       }
     }
+  },
+  "proxy_settings": { // top-level proxy settings
+    "subdomain": "", // If you have a paid ngrok account
+    "authtoken": "", // If you have a paid ngrok account
+    "ngrokPort": 0 // 0 will be ignored and default to 5050
   }
 }
 ```
@@ -102,7 +206,6 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
 With the advent of Zengine Plugins 2.0, any new or migrated plugins should specify version 2 in the frontend configuration, so mayan knows which build process to use.
 
 ## Contributing
-
 
 ### Fork
 

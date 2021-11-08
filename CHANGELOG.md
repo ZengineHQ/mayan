@@ -1,6 +1,71 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.7.0](https://github.com/ZengineHQ/mayan/compare/2.6.2...2.7.0) (2020-12-17)
+
+
+### Features
+
+* allow proxying scheduled webhooks ([3a685c5](https://github.com/ZengineHQ/mayan/commit/3a685c5e5cd073c4c90b0dc86aea9e90d9a99dee))
+
+<a name="2.6.2"></a>
+## [2.6.2](https://github.com/ZengineHQ/mayan/compare/2.6.1...2.6.2) (2020-08-18)
+
+
+### Features
+
+* provide NGROK_URL env var to frontend watch process ([82bbd43](https://github.com/ZengineHQ/mayan/commit/82bbd43))
+
+
+<a name="2.6.1"></a>
+## [2.6.1](https://github.com/ZengineHQ/mayan/compare/2.6.0...2.6.1) (2020-07-23)
+
+
+### Bug Fixes
+
+* enable cors for proxy server ([f06411b](https://github.com/ZengineHQ/mayan/commit/f06411b))
+
+
+
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/ZengineHQ/mayan/compare/2.5.1...2.6.0) (2020-07-09)
+
+
+### Features
+
+* update webhook urls while running services ([584dbf6](https://github.com/ZengineHQ/mayan/commit/584dbf6))
+
+
+
+<a name="2.5.1"></a>
+## [2.5.1](https://github.com/ZengineHQ/mayan/compare/2.5.0...2.5.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* safe json parse ([c77480a](https://github.com/ZengineHQ/mayan/commit/c77480a))
+
+
+
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/ZengineHQ/mayan/compare/v2.4.0...v2.5.0) (2020-05-26)
+
+
+### Bug Fixes
+
+* add top-level proxy_settings to context ([aac7dc6](https://github.com/ZengineHQ/mayan/commit/aac7dc6))
+* kill spawn after disconnect ([336ad06](https://github.com/ZengineHQ/mayan/commit/336ad06))
+* only deploy once per backend event ([6b8c28e](https://github.com/ZengineHQ/mayan/commit/6b8c28e))
+* print backend stderr without exiting ([5c49c03](https://github.com/ZengineHQ/mayan/commit/5c49c03))
+
+
+### Features
+
+* don't automatically run proxy when skipping backend deploy ([b48f23b](https://github.com/ZengineHQ/mayan/commit/b48f23b))
+* run maya-pre-build command before watching ([b61378e](https://github.com/ZengineHQ/mayan/commit/b61378e))
+
+
 
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/ZengineHQ/mayan/compare/v2.3.0...v2.4.0) (2020-03-27)
