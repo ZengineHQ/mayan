@@ -20,6 +20,8 @@ COPY . .
 
 RUN npm link
 
+EXPOSE 1234 3000
+
 WORKDIR /plugin
 
 ENTRYPOINT ["mayan"]
