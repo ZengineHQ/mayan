@@ -217,14 +217,16 @@ docker build -t mayan .
 
 ### Usage
 
-```
-docker run --rm -it -v $(pwd):/plugin -v ~/.ssh:"/root/.ssh" mayan
-```
-
-You can make a symlink to the included `mayan.sh` shell script to shorten this command.
+The included `mayan.sh` script will run the mayan container with the necessary parameters.
 
 ```
-ln -s $(pwd)/mayan.sh /usr/local/bin/mayan
+/path/to/mayan/mayan.sh build
+```
+
+You can make a symlink to the `mayan.sh` script to make it easier to access from your plugin directories.
+
+```
+ln -s $(pwd)/mayan.sh /usr/local/bin/mayan.sh
 ```
 
 #### MacOS SSH Config
