@@ -1,0 +1,51 @@
+name: Lint, Format and Test a Feature Branch
+
+on:
+  push:
+    - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mayan-tests:
+    runs-on: ${{ matrix.node_version }}
+    
+
+  magpie-format:
+    runs-on: ${{ vars.runner_type }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: format magpie
+        with:
+          precheck_mode: format
+        uses: ./.github/actions/lint-format-test
+
+  magpie-lint:
+    runs-on: ${{ vars.runner_type }}
+    needs:
+      - magpie-format
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: lint magpie
+        with:
+          precheck_mode: lint
+        uses: ./.github/actions/lint-format-test
+
+  magpie-test:
+    runs-on: ${{ vars.runner_type }}
+    needs:
+      - magpie-format
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: test magpie
+        with:
+          precheck_mode: test
+        uses: ./.github/actions/lint-format-test
