@@ -1,4 +1,4 @@
-name: Lint, Format and Test a Feature Branch
+name: Test Mayan
 
 on:
   push:
@@ -8,7 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  mayan-tests:
+  mayan-unit-tests:
     strategy:
       matrix:
         node_version:
@@ -54,7 +54,7 @@ jobs:
   mayan-integration-tests:
     runs-on: ubuntu-latest
     needs:
-      - mayan-tests
+      - mayan-unit-tests
     env:
       ZENGINE_API_TOKEN: ${{ secrets.zengine_api_token }}
     steps:
@@ -90,30 +90,30 @@ jobs:
           cp maya.example.json maya.json
           sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
 
-    - name: Test Mayan help command
-      run: mayan --help
+      - name: Test Mayan help command
+        run: mayan --help
 
-    - name: Test Mayan build plugin
-      run: |
-        cd test/integration/test-plugin
-        mayan build --env stage
+      - name: Test Mayan build plugin
+        run: |
+          cd test/integration/test-plugin
+          mayan build --env stage
 
-    - name: Test Mayan deploy plugin
-      run: |
-        if [ -z "$ZENGINE_API_TOKEN" ]; then
-          echo 'missing zengine deploy key'
-          exit 1
-        fi
+      - name: Test Mayan deploy plugin
+        run: |
+          if [ -z "$ZENGINE_API_TOKEN" ]; then
+            echo 'missing zengine deploy key'
+            exit 1
+          fi
 
-        cd test/integration/test-plugin
-        mayan deploy --env stage
-        
-    - name: Test Mayan publish plugin
-      run: |
-        if [ -z "$ZENGINE_API_TOKEN" ]; then
-          echo 'missing zengine deploy key'
-          exit 1
-        fi
-        
-        cd test/integration/test-plugin
-        mayan publish --env stage --yes
+          cd test/integration/test-plugin
+          mayan deploy --env stage
+
+      - name: Test Mayan publish plugin
+        run: |
+          if [ -z "$ZENGINE_API_TOKEN" ]; then
+            echo 'missing zengine deploy key'
+            exit 1
+          fi
+
+          cd test/integration/test-plugin
+          mayan publish --env stage --yes
