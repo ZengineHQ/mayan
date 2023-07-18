@@ -2,7 +2,6 @@ name: Lint, Format and Test a Feature Branch
 
 on:
   push:
-    - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -10,42 +9,42 @@ concurrency:
 
 jobs:
   mayan-tests:
-    runs-on: ${{ matrix.node_version }}
-    
-
-  magpie-format:
-    runs-on: ${{ vars.runner_type }}
+    strategy:
+      matrix:
+        node_version:
+          - latest
+          - 12
+          - 10
+    runs-on: ubuntu-latest
+    # runs-on: node:${{ matrix.node_version }}
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: format magpie
-        with:
-          precheck_mode: format
-        uses: ./.github/actions/lint-format-test
 
-  magpie-lint:
-    runs-on: ${{ vars.runner_type }}
-    needs:
-      - magpie-format
-    steps:
-      - uses: actions/checkout@v3
+      - name: Setup Node version
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
-      - name: lint magpie
-        with:
-          precheck_mode: lint
-        uses: ./.github/actions/lint-format-test
+          node-version: ${{ matrix.node_version }}
+          # node-version: 16.13.2
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
 
-  magpie-test:
-    runs-on: ${{ vars.runner_type }}
-    needs:
-      - magpie-format
-    steps:
-      - uses: actions/checkout@v3
+      - name: Install npm dependancies
+        run: npm install
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
         with:
-          fetch-depth: 0
-      - name: test magpie
-        with:
-          precheck_mode: test
-        uses: ./.github/actions/lint-format-test
+          path: |
+            node_modules/
+          key: ${{ runner.os }}-build-${{ matrix.node_version }}-${{ hashFiles('**/npm-shrinkwrap.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ matrix.node_version }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Code check styling (lint)
+        run: npm run eslint
+
+      - name: Run Tests
+        run: npm run test
