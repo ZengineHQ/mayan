@@ -68,6 +68,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
 
+      - name: Setup NPM bin
+        run: |
+          mkdir -p ~/.npm-global/bin
+          npm config set prefix '~/.npm-global'
+          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
+
       - name: Install npm dependancies
         run: npm install
 
