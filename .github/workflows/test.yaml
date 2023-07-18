@@ -77,8 +77,11 @@ jobs:
       - name: Install npm dependancies
         run: |
           npm install
+          echo "npm rebuild node-sass"
           npm rebuild node-sass
+          echo "npm link"
           npm link
+          which mayan
 
       - name: Cache node modules
         id: cache-npm
