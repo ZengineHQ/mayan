@@ -81,8 +81,7 @@ jobs:
           echo "npm rebuild node-sass"
           npm rebuild node-sass
           echo "npm link"
-          npm link
-          which mayan
+          npm link mayan
 
       - name: Cache node modules
         id: cache-npm
