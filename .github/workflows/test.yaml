@@ -72,7 +72,7 @@ jobs:
         run: |
           mkdir -p ~/.npm-global/bin
           npm config set prefix '~/.npm-global'
-          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
+          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_PATH
 
       - name: Install npm dependancies
         run: |
@@ -81,7 +81,6 @@ jobs:
           npm rebuild node-sass
           echo "npm link"
           npm link
-          which mayan
 
       - name: Cache node modules
         id: cache-npm
@@ -98,7 +97,7 @@ jobs:
       - name: Create maya.json
         run: |
           cd test/integration/test-plugin
-          echo 'export PATH="$GOPATH/bin:$PATH"' >> GITHUB_ENV
+          echo 'export PATH="$GOPATH/bin:$PATH"' >> GITHUB_PATH
           cp maya.example.json maya.json
           sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
 
