@@ -82,6 +82,8 @@ jobs:
           npm rebuild node-sass
           echo "npm link"
           npm link
+          ls ~/.npm-global/bin
+          echo "path: $PATH"
 
       - name: Cache node modules
         id: cache-npm
