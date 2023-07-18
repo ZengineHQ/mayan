@@ -62,9 +62,9 @@ jobs:
 
       - name: Setup NPM bin
         run: |
-          mkdir -p ~/.npm-global/bin
-          npm config set prefix '~/.npm-global'
-          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
+          mkdir -p "$HOME/.npm-global/bin""
+          npm config set prefix "$HOME/.npm-global"
+          echo 'export PATH=$HOME/.npm-global/bin:$PATH' >> $GITHUB_ENV
 
       - name: Setup Node version
         uses: actions/setup-node@v3
