@@ -75,7 +75,10 @@ jobs:
           echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
 
       - name: Install npm dependancies
-        run: npm install
+        run: |
+          npm install
+          npm rebuild node-sass
+          npm link
 
       - name: Cache node modules
         id: cache-npm
@@ -97,7 +100,9 @@ jobs:
           sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
 
       - name: Test Mayan help command
-        run: mayan --help
+        run: |
+          
+          mayan --help
 
       - name: Test Mayan build plugin
         run: |
