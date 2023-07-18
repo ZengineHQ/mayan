@@ -101,7 +101,7 @@ jobs:
       - name: Create maya.json
         run: |
           cd test/integration/test-plugin
-          echo "$GOPATH/bin" >> $GITHUB_ENV
+          # echo "${GOPATH}/bin" >> $GITHUB_ENV
           # echo 'export PATH="$GOPATH/bin:$PATH"' >> $GITHUB_ENV
           cp maya.example.json maya.json
           sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
