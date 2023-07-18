@@ -73,7 +73,7 @@ jobs:
         run: |
           mkdir -p ~/.npm-global/bin
           npm config set prefix '~/.npm-global'
-          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_PATH
+          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
 
       - name: Install npm dependancies
         run: |
@@ -98,7 +98,7 @@ jobs:
       - name: Create maya.json
         run: |
           cd test/integration/test-plugin
-          echo 'export PATH="$GOPATH/bin:$PATH"' >> GITHUB_PATH
+          echo 'export PATH="$GOPATH/bin:$PATH"' >> GITHUB_ENV
           cp maya.example.json maya.json
           sed -i 's@{{API_TOKEN}}@'"$ZENGINE_API_TOKEN"'@' maya.json
 
