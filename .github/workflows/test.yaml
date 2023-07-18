@@ -60,6 +60,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup NPM bin
+        run: |
+          mkdir -p ~/.npm-global/bin
+          npm config set prefix '~/.npm-global'
+          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
+
       - name: Setup Node version
         uses: actions/setup-node@v3
         with:
@@ -69,19 +75,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
 
-      - name: Setup NPM bin
-        run: |
-          mkdir -p ~/.npm-global/bin
-          npm config set prefix '~/.npm-global'
-          echo 'export PATH=~/.npm-global/bin:$PATH' >> $GITHUB_ENV
-
       - name: Install npm dependancies
         run: |
           npm install
           echo "npm rebuild node-sass"
           npm rebuild node-sass
           echo "npm link"
-          npm link mayan
+          npm link
 
       - name: Cache node modules
         id: cache-npm
