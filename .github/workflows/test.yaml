@@ -63,7 +63,8 @@ jobs:
       - name: Setup Node version
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: 10
+          # node-version: latest
           # node-version: 16.13.2
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
