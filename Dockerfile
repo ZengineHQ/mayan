@@ -1,4 +1,4 @@
-FROM node:v14.19.1-alpine3.14
+FROM node:14-alpine3.14
 
 RUN npm install -g npm@8.19.4
 
