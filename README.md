@@ -205,6 +205,34 @@ Or, for scheduled webhooks:
 
 With the advent of Zengine Plugins 2.0, any new or migrated plugins should specify version 2 in the frontend configuration, so mayan knows which build process to use.
 
+## Docker
+
+Running mayan from a Docker image allows for a common plugin build environment. Instead of using npm to globally install mayan, clone this repo, then build and run the Docker container using the commands below.
+
+### Build
+
+```
+docker build -t mayan .
+```
+
+### Usage
+
+The included `mayan.sh` script will run the mayan container with the necessary parameters.
+
+```
+/path/to/mayan/mayan.sh build
+```
+
+You can make a symlink to the `mayan.sh` script to make it easier to access from your plugin directories.
+
+```
+ln -s $(pwd)/mayan.sh /usr/local/bin/mayan.sh
+```
+
+#### MacOS SSH Config
+
+MacOS may include the line `UseKeychain yes` in `~/.ssh/config`, which is not a supported config in the container. To prevent this error, add the line `IgnoreUnknown UseKeychain` above it.
+
 ## Contributing
 
 ### Fork
