@@ -23,6 +23,11 @@ exports.builder = yargs => {
     alias: 'f',
     default: 'short'
   })
+  yargs.option('profile', {
+    describe: 'AWS profile if you have multiple',
+    type: 'string',
+    alias: 'a'
+  })
   yargs.option('draft', {
     describe: 'show draft uuid instead of published',
     type: 'boolean',
