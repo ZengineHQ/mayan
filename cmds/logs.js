@@ -28,6 +28,12 @@ exports.builder = yargs => {
     type: 'string',
     alias: 'a'
   })
+  yargs.option('hours', {
+    describe: 'hours you want to go back in the logs for',
+    type: 'string',
+    alias: 'h',
+    default: 24
+  })
   yargs.option('draft', {
     describe: 'show draft uuid instead of published',
     type: 'boolean',
