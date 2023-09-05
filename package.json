@@ -29,6 +29,7 @@
     "callbag-pipe": "^1.2.0",
     "chokidar": "^3.4.1",
     "clipboardy": "^2.3.0",
+    "compare-versions": "^6.1.0",
     "execa": "^0.10.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
