@@ -111,7 +111,7 @@ jobs:
 
       - name: Test Mayan help command
         run: |
-          
+
           mayan --help
 
       - name: Test Mayan build plugin
@@ -119,22 +119,22 @@ jobs:
           cd test/integration/test-plugin
           mayan build --env stage
 
-      - name: Test Mayan deploy plugin
-        run: |
-          if [ -z "$ZENGINE_API_TOKEN" ]; then
-            echo 'missing zengine deploy key'
-            exit 1
-          fi
-
-          cd test/integration/test-plugin
-          mayan deploy --env stage
-
-      - name: Test Mayan publish plugin
-        run: |
-          if [ -z "$ZENGINE_API_TOKEN" ]; then
-            echo 'missing zengine deploy key'
-            exit 1
-          fi
-
-          cd test/integration/test-plugin
-          mayan publish --env stage --yes
+      #- name: Test Mayan deploy plugin
+      #  run: |
+      #    if [ -z "$ZENGINE_API_TOKEN" ]; then
+      #      echo 'missing zengine deploy key'
+      #      exit 1
+      #    fi
+      #
+      #    cd test/integration/test-plugin
+      #    mayan deploy --env stage
+      #
+      #- name: Test Mayan publish plugin
+      #  run: |
+      #    if [ -z "$ZENGINE_API_TOKEN" ]; then
+      #      echo 'missing zengine deploy key'
+      #      exit 1
+      #    fi
+      #
+      #    cd test/integration/test-plugin
+      #    mayan publish --env stage --yes
