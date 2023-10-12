@@ -263,3 +263,16 @@ npm link
 ### Adding new commands
 
 Follow this [approach/strategy](https://github.com/yargs/yargs/blob/master/docs/advanced.md#example-command-hierarchy-using-commanddir) to organize commands
+
+## Releasing
+
+This uses release-it to do releases. It will handle creating the release tag, updating the README and creating the github and npm releases.
+
+To do a dry run:
+
+    npx release-it -d
+
+To do the real thing:
+
+    npx release-it
+
