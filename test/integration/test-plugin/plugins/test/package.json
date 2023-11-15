@@ -45,7 +45,7 @@
 		"ng-grid": "github:Wizehive/ng-grid#2.x",
 		"ng-showdown": "github:Wizehive/ng-showdown#1.1.2",
 		"showdown": "github:Wizehive/showdown#1.7.6",
-		"tinymce": "4.9.11",
+		"tinymce": "5.10.9",
 		"ui-select": "github:Wizehive/ui-select",
 		"zn-filter-matcher": "1.2.3"
 	}
