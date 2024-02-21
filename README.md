@@ -79,6 +79,8 @@ You can expose your local backend services to the internet using `mayan watch --
 
 Once you run mayan against a backend service the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
 
+ngrok now requires you to have an account to use it. You can make a free account and put your account's token in the `proxy_settings` in your `maya.json`. See `maya.json` example below for more.
+
 ### stdin commands
 
 While your backend services are running, you can send these commands to mayan using stdin in the same terminal where mayan is running:
@@ -197,7 +199,7 @@ Or, for scheduled webhooks:
   },
   "proxy_settings": { // top-level proxy settings
     "subdomain": "", // If you have a paid ngrok account
-    "authtoken": "", // If you have a paid ngrok account
+    "authtoken": "", // Auth token of your ngrok account
     "ngrokPort": 0 // 0 will be ignored and default to 5050
   }
 }
