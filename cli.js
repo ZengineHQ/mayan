@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const yargs = require('yargs')
-const kleur = require('kleur')
+const { red } = require('kleur')
 
 function parseConfig (configPath) {
   return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
@@ -16,7 +16,7 @@ updateNotifier({
 }).notify({ isGlobal: true })
 
 function onFail(msg, err) {
-  console.log(kleur.red('\n\nFailed, please fix the issues above. Use --help for available options.\n'))
+  console.log(red('\n\nFailed, please fix the issues above. Use --help for available options.\n'))
 }
 
 const argv = yargs
