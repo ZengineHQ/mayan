@@ -73,7 +73,7 @@ For more information, RTFM at https://github.com/ZengineHQ/mayan
 
 You can expose your local backend services to the internet using `mayan watch --proxy`. Configure the proxy server by placing a `proxy_settings` key at the top level, the plugin level, and/or the backend service level. These settings inherit up the "chain," with the service-level overriding all else. Any option could feasibly be placed at any level, but obviously some options more naturally reside in certain locations. The only caveats to that would be:
 
-  1. `subdomain`, `authtoken`, `ngrokPort` belong at the top level because these only get referenced once to set up the ngrok tunnel
+  1. `subdomain`, `domain`, `authtoken`, `ngrokPort` belong at the top level because these only get referenced once to set up the ngrok tunnel
 
   2. `port` belongs at the service level (leaving this out will default to 3000 and increment upwards to avoid using the same port for multiple services)
 
@@ -196,6 +196,7 @@ Or, for scheduled webhooks:
     }
   },
   "proxy_settings": { // top-level proxy settings
+    "domain": "", // If you have a paid ngrok account and does not end in ngrok.io use this instead of subdomain
     "subdomain": "", // If you have a paid ngrok account
     "authtoken": "", // If you have a paid ngrok account
     "ngrokPort": 0 // 0 will be ignored and default to 5050
