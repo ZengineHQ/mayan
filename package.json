@@ -46,7 +46,7 @@
     "lodash": "^4.17.19",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
-    "ngrok": "^5.0.0-beta.2",
+    "@ngrok/ngrok": "latest",
     "prompt-confirm": "^2.0.4",
     "pump": "^3.0.0",
     "request": "^2.88.2",
