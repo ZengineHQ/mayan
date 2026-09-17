@@ -36,7 +36,7 @@ describe('context', () => {
 
   it('should fail when no defaults are identified in maya.json or specified in command (`mayan watch/build/deploy/publish`)', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -55,9 +55,9 @@ describe('context', () => {
       sd: false,
       skipDeploy: false,
       plugin: 'invalid-name',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -66,7 +66,7 @@ describe('context', () => {
 
   it('should fail with an invalid environment name (`mayan watch/build/deploy/publish -e invalid-env`)', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -87,9 +87,9 @@ describe('context', () => {
       sd: false,
       skipDeploy: false,
       plugin: 'invalid-name',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -98,7 +98,7 @@ describe('context', () => {
 
   it('should fail with an invalid plugin name (`mayan watch/build/deploy/publish invalid-name`)', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -117,9 +117,9 @@ describe('context', () => {
       sd: false,
       skipDeploy: false,
       plugin: 'invalid-name',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -128,7 +128,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish` using all defaults successfully', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -147,9 +147,9 @@ describe('context', () => {
       sd: false,
       skipDeploy: false,
       plugin: '*',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -207,7 +207,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish test -e stage` successfully', async () => {
     const argv = {
-      _: [ 'w' ],
+      _: ['w'],
       frontend: false,
       f: false,
       backend: false,
@@ -228,9 +228,9 @@ describe('context', () => {
       e: 'stage',
       env: 'stage',
       plugin: 'test',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -264,7 +264,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish -e prod` successfully', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -285,9 +285,9 @@ describe('context', () => {
       e: 'prod',
       env: 'prod',
       plugin: '*',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan'
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan'
     }
 
     const ctx = await createNewContext(argv, mayaJSON)
@@ -337,7 +337,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish` using all defaults successfully when no services are present', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -356,9 +356,9 @@ describe('context', () => {
       sd: false,
       skipDeploy: false,
       plugin: '*',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -390,7 +390,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish test -e stage` successfully when no services are present', async () => {
     const argv = {
-      _: [ 'w' ],
+      _: ['w'],
       frontend: false,
       f: false,
       backend: false,
@@ -411,9 +411,9 @@ describe('context', () => {
       e: 'stage',
       env: 'stage',
       plugin: 'test',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan',
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan',
       config: './maya.json'
     }
 
@@ -438,7 +438,7 @@ describe('context', () => {
 
   it('should process argv for `mayan watch/build/deploy/publish -e prod` successfully when no services are present', async () => {
     const argv = {
-      _: [ 'watch' ],
+      _: ['watch'],
       frontend: false,
       f: false,
       backend: false,
@@ -459,9 +459,9 @@ describe('context', () => {
       e: 'prod',
       env: 'prod',
       plugin: '*',
-      services: [ '*' ],
-      s: [ '*' ],
-      '$0': 'mayan'
+      services: ['*'],
+      s: ['*'],
+      $0: 'mayan'
     }
 
     const ctx = await createNewContext(argv, mayaJSONNoServices)
