@@ -26,7 +26,6 @@
     "@babel/plugin-transform-strict-mode": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@ngrok/ngrok": "^1.7.0",
-    "archiver": "^7.0.1",
     "bluebird": "^3.7.2",
     "callbag-combine": "^1.2.0",
     "callbag-debounce": "^4.0.0",
