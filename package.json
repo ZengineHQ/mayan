@@ -9,7 +9,6 @@
     "node": ">=24"
   },
   "scripts": {
-    "preinstall": "node scripts/check-node.js",
     "test": "mocha --require test/support/chai.js --exit",
     "tdd": "mocha --require test/support/chai.js --watch",
     "eslint": "eslint lib/ cmds/ test/",
