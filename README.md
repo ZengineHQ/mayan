@@ -10,6 +10,8 @@ A port of [maya](https://github.com/ZengineHQ/maya) in NodeJS
 npm install -g @zenginehq/mayan
 ```
 
+mayan requires Node.js 24 or newer (the version pinned in `.nvmrc`). Older versions fail on startup with a clear error.
+
 ## Using
 
 ```
@@ -77,7 +79,9 @@ You can expose your local backend services to the internet using `mayan watch --
 
   2. `port` belongs at the service level (leaving this out will default to 3000 and increment upwards to avoid using the same port for multiple services)
 
-Once you run mayan against a backend service the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
+The tunnel is created with the official [`@ngrok/ngrok`](https://www.npmjs.com/package/@ngrok/ngrok) SDK, which requires an ngrok authtoken. Get one free from the [ngrok dashboard](https://dashboard.ngrok.com/get-started/your-authtoken) and either set it as `authtoken` in `proxy_settings` or export it as `NGROK_AUTHTOKEN` in your shell.
+
+Once you run mayan against a backend service with the `--proxy` flag, your generated ngrok url will be displayed in the terminal and automatically copied to your clipboard. You can then use this url in your test webhook configurations or send requests to it from your frontend plugin.
 
 ### stdin commands
 
@@ -96,7 +100,7 @@ While your backend services are running, you can send these commands to mayan us
 > $ mayan w --sd --proxy
 > # output from command indicating services are running
 > https://6e12515eb18c.ngrok.io --> copied to clipboard!
-> Inspect this connection in your browser at http://127.0.0.1:4040
+> Inspect this connection in your browser at https://dashboard.ngrok.com/traffic-inspector
 >
 > Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
 >
@@ -124,7 +128,7 @@ Or, for scheduled webhooks:
 > $ mayan w --sd --proxy
 > # output from command indicating services are running
 > https://6e12515eb18c.ngrok.io --> copied to clipboard!
-> Inspect this connection in your browser at http://127.0.0.1:4040
+> Inspect this connection in your browser at https://dashboard.ngrok.com/traffic-inspector
 >
 > Listening on http://:::3000/workspaces/:workspaceId/:pluginNamespace/:pluginRoute
 >
@@ -196,9 +200,9 @@ Or, for scheduled webhooks:
     }
   },
   "proxy_settings": { // top-level proxy settings
-    "domain": "", // If you have a paid ngrok account and does not end in ngrok.io use this instead of subdomain
-    "subdomain": "", // If you have a paid ngrok account
-    "authtoken": "", // If you have a paid ngrok account
+    "domain": "", // A reserved ngrok domain (e.g. my-app.ngrok-free.app or a custom domain); preferred over subdomain
+    "subdomain": "", // Legacy: a reserved subdomain under ngrok.io, ignored if domain is set
+    "authtoken": "", // Your ngrok authtoken; falls back to the NGROK_AUTHTOKEN environment variable
     "ngrokPort": 0 // 0 will be ignored and default to 5050
   }
 }
