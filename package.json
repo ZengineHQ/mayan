@@ -37,7 +37,6 @@
     "compare-versions": "^6.1.0",
     "execa": "^10.0.1",
     "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
     "gulp-html-minifier-terser": "^8.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^6.0.1",
