@@ -1,10 +1,10 @@
-FROM node:16.20.2-alpine3.18
+FROM node:24.14.1-alpine3.22
 
-RUN npm install -g npm@8.19.4
+RUN npm install -g npm@11.11.0
 
 RUN apk add --no-cache git \
-    --repository https://alpine.global.ssl.fastly.net/alpine/v3.18/community \
-    --repository https://alpine.global.ssl.fastly.net/alpine/v3.18/main
+    --repository https://alpine.global.ssl.fastly.net/alpine/v3.22/community \
+    --repository https://alpine.global.ssl.fastly.net/alpine/v3.22/main
 
 RUN apk update && \
   apk add openssh && \

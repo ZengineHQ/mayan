@@ -18,10 +18,7 @@ jobs:
       matrix:
         node_version:
           - latest
-          - 20
-          - 16
-          - 12
-          - 10
+          - 24
     runs-on: ubuntu-latest
     # runs-on: node:${{ matrix.node_version }}
     steps:
@@ -82,8 +79,6 @@ jobs:
       - name: Install npm dependancies
         run: |
           npm install
-          echo "npm rebuild node-sass"
-          npm rebuild node-sass
           echo "npm link"
           npm link
           ls ~/.npm-global/bin
